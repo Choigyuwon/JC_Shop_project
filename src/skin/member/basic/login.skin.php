@@ -6,7 +6,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
 ?>
 
 <div id="mb_login" class="mbskin">
-    <a href="<?php echo G5_SHOP_URL; ?>/"><img src="<?php echo G5_DATA_URL; ?>/common/jc_logo" id="logosize" alt="<?php echo $config['cf_title']; ?>"></a>
+    <a href="<?php echo G5_SHOP_URL; ?>/"><img src="<?php echo G5_DATA_URL; ?>/common/jc_logo1" id="logosize" alt="<?php echo $config['cf_title']; ?>"></a>
 </div>
 <!-- 로그인 시작 { -->
 <div id="mb_login" class="mbskin">
