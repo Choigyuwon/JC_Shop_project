@@ -54,7 +54,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_JS_URL.'/owlcarousel/owl.carou
 	            <label for="sch_str" class="sound_only">검색어<strong class="sound_only"> 필수</strong></label>
 	            <input type="text" name="q" value="<?php echo stripslashes(get_text(get_search_string($q))); ?>" id="sch_str" required placeholder="검색어를 입력해주세요">
 	            <button type="submit" id="sch_submit" value="검색"><i class="fa fa-search" aria-hidden="true"></i><span class="sound_only">검색</span></button>
-                <button type="button" id="sch_submit2" onclick="location.href='https://gw2988.cafe24.com/zxc/aitest.php' ">Ai CAM</button>
+                <button type="button" id="sch_submit2" onclick="location.href='https://gw2988.cafe24.com/zxc/aitest.php' ">Ai CAM</button> // 이부분 수정
             </form>
 	            <script>
 	            function search_submit(f) {
