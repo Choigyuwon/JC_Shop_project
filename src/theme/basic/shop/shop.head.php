@@ -54,7 +54,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_JS_URL.'/owlcarousel/owl.carou
 	            <label for="sch_str" class="sound_only">검색어<strong class="sound_only"> 필수</strong></label>
 	            <input type="text" name="q" value="<?php echo stripslashes(get_text(get_search_string($q))); ?>" id="sch_str" required placeholder="검색어를 입력해주세요">
 	            <button type="submit" id="sch_submit" value="검색"><i class="fa fa-search" aria-hidden="true"></i><span class="sound_only">검색</span></button>
-                <button type="button" id="sch_submit2" onclick="location.href='https://gw2988.cafe24.com/zxc/aitest.php' " ><img src="<?php echo G5_DATA_URL; ?>/common/camara" width="50px"; height="50px";></button>
+                <button type="button" id="sch_submit2" onclick="location.href='https://gw2988.cafe24.com/zxc/aitest.php' ">Ai CAM</button>
             </form>
 	            <script>
 	            function search_submit(f) {
@@ -72,7 +72,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_JS_URL.'/owlcarousel/owl.carou
         <!-- 쇼핑몰 배너 시작 { -->
         <?php // echo display_banner('왼쪽'); ?>
         <!-- } 쇼핑몰 배너 끝 -->
-        
+
     </div>
 
     <div id="hd_menu">
@@ -85,7 +85,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_JS_URL.'/owlcarousel/owl.carou
             <li><a href="<?php echo shop_type_url(4); ?>">인기상품</a></li>
             <li><a href="<?php echo shop_type_url(5); ?>">할인상품</a></li>
         </ul>
-    </div> 
+    </div>
 </div>
 <!-- } 상단 끝 -->
         
