@@ -5,6 +5,11 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 0);
 ?>
 
+<div id="mb_login" class="mbskin">
+    <a href="http://gw2988.cafe24.com/g5/shop/">
+        <img src="http://gw2988.cafe24.com/g5/data/common/jc logo" id=""logosize" alt="JustClap" title>
+    </a>
+</div>
 <!-- 로그인 시작 { -->
 <div id="mb_login" class="mbskin">
     <div class="mbskin_box">
