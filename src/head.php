@@ -15,7 +15,6 @@ if (G5_IS_MOBILE) {
 
 include_once(G5_PATH.'/head.sub.php');
 include_once(G5_LIB_PATH.'/latest.lib.php');
-include_once(G5_LIB_PATH.'/outlogin.lib.php');
 include_once(G5_LIB_PATH.'/poll.lib.php');
 include_once(G5_LIB_PATH.'/visit.lib.php');
 include_once(G5_LIB_PATH.'/connect.lib.php');
@@ -42,9 +41,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
             <?php } ?>
 			<ul class="hd_login">        
             <?php if ($is_member) {  ?>
-			<li class="shop_login">
-				<?php echo outlogin('theme/shop_basic'); // 아웃로그인 ?>	
-			</li>
+
 			<li class="shop_cart"><a href="<?php echo G5_SHOP_URL; ?>/cart.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="sound_only">장바구니</span><span class="count"><?php echo get_boxcart_datas_count(); ?></span></a></li>
             <?php } else { ?>
             <li class="login"><a href="<?php echo G5_BBS_URL ?>/login.php?url=<?php echo $urlencode; ?>">로그인</a></li>

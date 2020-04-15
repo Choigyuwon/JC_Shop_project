@@ -19,7 +19,7 @@ include_once(G5_THEME_SHOP_PATH.'/shop.head.php');
 <!-- 히트상품 시작 { -->
 <section id="idx_hit" class="sct_wrap">
     <header>
-        <h2><a href="<?php echo shop_type_url('1'); ?>">히트상품</a></h2>
+        <h2><a href="<?php echo shop_type_url('1'); ?>">전체상품</a></h2>
     </header>
     <?php
     $list = new item_list();

@@ -43,8 +43,6 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_JS_URL.'/owlcarousel/owl.carou
         </ul>
 		</div>
 	</div>
-
-
     <div id="hd_wrapper">
         <div id="logo">
         	<a href="<?php echo G5_SHOP_URL; ?>/"><img src="<?php echo G5_DATA_URL; ?>/common/jc_logo" id="logosize" alt="<?php echo $config['cf_title']; ?>"></a>
@@ -53,10 +51,10 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_JS_URL.'/owlcarousel/owl.carou
 	        <fieldset id="hd_sch">
 	            <legend>쇼핑몰 전체검색</legend>
 	            <form name="frmsearch1" action="<?php echo G5_SHOP_URL; ?>/search.php" onsubmit="return search_submit(this);">
-	            <label for="sch_str" class="sound_only">검색어<strong class="sound_only"> 필수</strong></label>
+	          
 	            <input type="text" name="q" value="<?php echo stripslashes(get_text(get_search_string($q))); ?>" id="sch_str" required placeholder="검색어를 입력해주세요">
 	            <button type="submit" id="sch_submit" value="검색"><i class="fa fa-search" aria-hidden="true"></i><span class="sound_only">검색</span></button>
-                <button type="button" id="sch_submit2" onclick="location.href='https://gw2988.cafe24.com/g5/theme/basic/JCai.php' ">Ai CAM</button> // 이부분 수정
+                <button type="button" id="sch_submit2" onclick="location.href='https://gw2988.cafe24.com/g5/theme/basic/shop/JCai.php' ">Ai CAM</button>
             </form>
 	            <script>
 	            function search_submit(f) {
