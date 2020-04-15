@@ -6,9 +6,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
 ?>
 
 <div id="mb_login" class="mbskin">
-    <a href="http://gw2988.cafe24.com/g5/shop/">
-        <img src="http://gw2988.cafe24.com/g5/data/common/jc_logo" id=""logosize" alt="JustClap" title>
-    </a>
+    <a href="<?php echo G5_SHOP_URL; ?>/"><img src="<?php echo G5_DATA_URL; ?>/common/jc_logo" id="logosize" alt="<?php echo $config['cf_title']; ?>"></a>
 </div>
 <!-- 로그인 시작 { -->
 <div id="mb_login" class="mbskin">
