@@ -21,62 +21,55 @@ if(G5_COMMUNITY_USE === false) {
 
 <hr>
 
-<!-- 하단 시작 { -->
-<div id="ft">
+    <!-- 하단 시작 { -->
+    <div id="ft">
+        <div id="ft_wr">
+            <div id="logo" class="ft_cnt">
+                <a href="<?php echo G5_SHOP_URL; ?>/"><img src="<?php echo G5_DATA_URL; ?>/common/jc_logo" id="logosize" alt="<?php echo $config['cf_title']; ?>"></a>
+            </div>
+            <div id="ft_company" class="ft_cnt">
+                <h2>회사(팀) 정보</h2>
+                <p class="ft_info">
+                    <span><b>팀명</b> <?php echo $default['de_admin_company_name']; ?></span><br>
+                    <span><b>주소</b> <?php echo $default['de_admin_company_addr']; ?></span><br>
+                    <span><b>대표</b> <?php echo $default['de_admin_company_owner']; ?></span>
+                    <span><b>전화</b> <?php echo $default['de_admin_company_tel']; ?></span><br>
+                    <!-- <span><b>운영자</b> <?php echo $admin['mb_name']; ?></span><br> -->
+                    <span><b>개인정보 보호책임자</b> <?php echo $default['de_admin_info_name']; ?></span><br>
+            </div>
+            <div class="ft_cnt" id="ft_bank">
+                <h2 id="ft_bankh2">BANKING INFO</h2><br><br>
+                농협 356-1004-8447-03 최규원<br><br>
+                농협 352-050-199-4833 정예락<br><br>
+                농협 302-0912-2093-11  엄수현<br><br>
+                농협 356-0993-7665-13 이재성<br><br>
+            </div>
 
-    <div id="ft_wr">
-        <div id="ft_link" class="ft_cnt">
-            <a href="<?php echo get_pretty_url('content', 'company'); ?>">회사소개</a>
-            <a href="<?php echo get_pretty_url('content', 'privacy'); ?>">개인정보처리방침</a>
-            <a href="<?php echo get_pretty_url('content', 'provision'); ?>">서비스이용약관</a>
-            <a href="<?php echo get_device_change_url(); ?>">모바일버전</a>
+            <ul id="ft_link" class="ft_cnt">
+                <li><a href="<?php echo get_pretty_url('content', 'company'); ?>">팀원소개</a></li>
+                <li><a href="<?php echo get_pretty_url('content', 'provision'); ?>">서비스이용약관</a></li>
+                <li><a href="<?php echo get_pretty_url('content', 'privacy'); ?>">개인정보처리방침</a></li>
+            </ul>
+
+
+            <!-- 커뮤니티 최신글 시작 { -->
+
         </div>
-        <div id="ft_company" class="ft_cnt">
-        	<h2>사이트 정보</h2>
-	        <p class="ft_info">
-                회사명 : JustClap  / 대표 : 최규원<br>
-				주소  : 강원도 원주시 강릉원주대학교 컴퓨터공학과<br>
-				전화 :  010-4535-6076<br>
-			</p>
-	    </div>
-        <?php
-        //공지사항
-        // 이 함수가 바로 최신글을 추출하는 역할을 합니다.
-        // 사용방법 : latest(스킨, 게시판아이디, 출력라인, 글자수);
-        // 테마의 스킨을 사용하려면 theme/basic 과 같이 지정
-        echo latest('theme/notice', 'notice', 4, 13);
-        ?>
-        
-		<?php echo visit('theme/basic'); // 접속자집계, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정 ?>
-	</div>      
-        <!-- <div id="ft_catch"><img src="<?php echo G5_IMG_URL; ?>/ft_logo.png" alt="<?php echo G5_VERSION ?>"></div> -->
-        <div id="ft_copy">Copyright &copy; <b>소유하신 도메인.</b> All rights reserved.</div>
-    
-    
-    <button type="button" id="top_btn">
-    	<i class="fa fa-arrow-up" aria-hidden="true"></i><span class="sound_only">상단으로</span>
-    </button>
-    <script>
-    $(function() {
-        $("#top_btn").on("click", function() {
-            $("html, body").animate({scrollTop:0}, '500');
-            return false;
-        });
-    });
-    </script>
-</div>
+
+        <div id="ft_copy">Copyright &copy; 2001-2013 <?php echo $default['de_admin_company_name']; ?>. All Rights Reserved.</div>
+    </div>
 
 <?php
-if(G5_DEVICE_BUTTON_DISPLAY && !G5_IS_MOBILE) { ?>
-<?php
-}
+$sec = get_microtime() - $begin_time;
+$file = $_SERVER['SCRIPT_NAME'];
 
 if ($config['cf_analytics']) {
     echo $config['cf_analytics'];
 }
 ?>
 
-<!-- } 하단 끝 -->
+    <script src="<?php echo G5_JS_URL; ?>/sns.js"></script>
+    <!-- } 하단 끝 -->
 
 <script>
 $(function() {
