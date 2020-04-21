@@ -117,7 +117,7 @@ input, textarea {
 #hd_qnb li:last-child {padding-right:0;margin-right:0;border-right:0}
 #hd_qnb li a {display:inline-block;color:#919191}
 
-.hd_login {position:absolute;right:240px;top:45px;}
+.hd_login {position:absolute;right:200px;top:45px;}
 .hd_login>li {float:left;position:relative;margin:0 5px}
 .hd_login>li.login a {color:#3a8afd;padding:10px; border-radius:3px;border:1px solid #3a8afd}
 .hd_login>li a {color:#fff}
