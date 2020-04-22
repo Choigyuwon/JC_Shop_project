@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../../../theme/basic/skin/outlogin/shop_side/style.css">
     <link rel="stylesheet" href="../../../theme/basic/skin/shop/basic/style.css">
 </head>
+
 <?php
 include_once('./_common.php');
 
