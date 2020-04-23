@@ -31,7 +31,7 @@ include_once(G5_THEME_SHOP_PATH.'/shop.head.php');
     $list->set_view('it_cust_price', true);
     $list->set_view('it_price', true);
     $list->set_view('it_icon', true);
-    $list->set_view('sns', true);
+    $list->set_view('sns', false);
     $list->set_view('star', true);
     echo $list->run();
     ?>
@@ -68,7 +68,7 @@ $(function(){
     $list->set_view('it_cust_price', true);
     $list->set_view('it_price', true);
     $list->set_view('it_icon', true);
-    $list->set_view('sns', true);
+    $list->set_view('sns', false);
     $list->set_view('star', true);
     echo $list->run();
     ?>
@@ -91,7 +91,7 @@ $(function(){
     $list->set_view('it_cust_price', true);
     $list->set_view('it_price', true);
     $list->set_view('it_icon', true);
-    $list->set_view('sns', true);
+    $list->set_view('sns', false);
     $list->set_view('star', true);
     echo $list->run();
     ?>
@@ -116,7 +116,7 @@ $(function(){
     $list->set_view('it_cust_price', true);
     $list->set_view('it_price', true);
     $list->set_view('it_icon', true);
-    $list->set_view('sns', true);
+    $list->set_view('sns', false);
     $list->set_view('star', true);
     echo $list->run();
     ?>

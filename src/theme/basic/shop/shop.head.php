@@ -79,7 +79,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_JS_URL.'/owlcarousel/owl.carou
     	<button type="button" id="menu_open"><i class="fa fa-bars" aria-hidden="true"></i> 카테고리</button>
 		<?php include_once(G5_THEME_SHOP_PATH.'/category.php'); // 분류 ?>
 		<ul class="hd_menu">
-            <li><a href="<?php echo shop_type_url(1); ?>">히트상품</a></li>
+            <li><a href="<?php echo shop_type_url(1); ?>">전체상품</a></li>
             <li><a href="<?php echo shop_type_url(2); ?>">추천상품</a></li>
             <li><a href="<?php echo shop_type_url(3); ?>">최신상품</a></li>
             <li><a href="<?php echo shop_type_url(4); ?>">인기상품</a></li>
@@ -94,7 +94,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_JS_URL.'/owlcarousel/owl.carou
 		<li><button class="btn_sm_cl1 btn_sm"><i class="fa fa-user-o" aria-hidden="true"></i><span class="qk_tit">마이메뉴</span></button></li>
 		<li><button class="btn_sm_cl2 btn_sm"><i class="fa fa-archive" aria-hidden="true"></i><span class="qk_tit">오늘 본 상품</span></button></li>
 		<li><button class="btn_sm_cl3 btn_sm"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="qk_tit">장바구니</span></button></li>
-		<li><button class="btn_sm_cl4 btn_sm"><i class="fa fa-heart-o" aria-hidden="true"></i><span class="qk_tit">위시리스트</span></button></li>
+		<li><button class="btn_sm_cl4 btn_sm"><i class="fa fa-heart-o" aria-hidden="true"></i><span class="qk_tit">좋아요</span></button></li>
     </ul>
     <button type="button" id="top_btn"><i class="fa fa-arrow-up" aria-hidden="true"></i><span class="sound_only">상단으로</span></button>
     <div id="tabs_con">
@@ -199,13 +199,13 @@ jQuery(function ($){
 <div id="wrapper" class="<?php echo implode(' ', $wrapper_class); ?>">
     <!-- #container 시작 { -->
     <div id="container">
-
         <?php if(defined('_INDEX_')) { ?>
         <div id="aside">
             <?php include_once(G5_SHOP_SKIN_PATH.'/boxcategory.skin.php'); // 상품분류 ?>
             <?php if($default['de_type4_list_use']) { ?>
             <!-- 인기상품 시작 { -->
             <section id="side_pd">
+
                 <h2><a href="<?php echo shop_type_url('4'); ?>">인기상품</a></h2>
                 <?php
                 $list = new item_list();
@@ -221,12 +221,14 @@ jQuery(function ($){
                 echo $list->run();
                 ?>
             </section>
-            <!-- } 인기상품 끝 -->
+
+                <!-- } 인기상품 끝 -->
             <?php } ?>
             
             <?php echo display_banner('왼쪽', 'boxbanner.skin.php'); ?>
             <?php echo poll('theme/shop_basic'); // 설문조사 ?>
         </div>
+
         <?php } // end if ?>
         <?php
             $content_class = array('shop-content');
@@ -244,9 +246,11 @@ jQuery(function ($){
         <div class="<?php echo implode(' ', $content_class); ?>">
             <?php if ((!$bo_table || $w == 's' ) && !defined('_INDEX_')) { ?><div id="wrapper_title"><?php echo $g5['title'] ?></div><?php } ?>
             <!-- 글자크기 조정 display:none 되어 있음 시작 { -->
+
             <div id="text_size">
                 <button class="no_text_resize" onclick="font_resize('container', 'decrease');">작게</button>
                 <button class="no_text_resize" onclick="font_default('container');">기본</button>
                 <button class="no_text_resize" onclick="font_resize('container', 'increase');">크게</button>
             </div>
+
             <!-- } 글자크기 조정 display:none 되어 있음 끝 -->

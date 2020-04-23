@@ -46,12 +46,6 @@ for($k=0; $cp=sql_fetch_array($res); $k++) {
 	        	</a>
 	        </li>
 	        <li>
-	            <a href="<?php echo G5_BBS_URL ?>/memo.php" target="_blank" class="win_memo">
-	            	<i class="fa fa-envelope-o" aria-hidden="true"></i><span class="sound_only">안 읽은 </span>쪽지
-	                <strong><?php echo $memo_not_read ?></strong>
-	            </a>
-	        </li>
-	        <li>
 	            <a href="<?php echo G5_BBS_URL ?>/scrap.php" target="_blank" class="win_scrap">
 	            	<i class="fa fa-thumb-tack" aria-hidden="true"></i>스크랩
 	            	<strong class="scrap">0</strong>
@@ -97,7 +91,7 @@ for($k=0; $cp=sql_fetch_array($res); $k++) {
 	
 	    <!-- 최근 위시리스트 시작 { -->
 	    <section id="smb_my_wish">
-	        <h2>최근 위시리스트</h2>
+	        <h2>최근 좋아요 리스트</h2>
             <form name="fwishlist" method="post" action="./cartupdate.php">
             <input type="hidden" name="act" value="multi">
             <input type="hidden" name="sw_direct" value="">

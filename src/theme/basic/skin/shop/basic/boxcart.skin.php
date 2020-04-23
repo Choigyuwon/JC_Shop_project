@@ -41,7 +41,7 @@ $cart_action_url = G5_SHOP_URL.'/cartupdate.php';
     }   //end foreach
 
     if ($i==0)
-        echo '<li class="li_empty">장바구니 상품 없음</li>'.PHP_EOL;
+        echo '<li class="li_empty">장바구니에 추가 하세요!</li>'.PHP_EOL;
     ?>
     </ul>
     <?php if($i){ ?><div class="btn_buy"><button type="submit" class="btn_submit">구매하기</button></div><?php } ?>

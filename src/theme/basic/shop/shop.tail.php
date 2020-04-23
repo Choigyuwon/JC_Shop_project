@@ -50,7 +50,7 @@ $admin = get_admin("super");
        
     </div>
 
-    <div id="ft_copy">Copyright &copy; 2001-2013 <?php echo $default['de_admin_company_name']; ?>. All Rights Reserved.</div>
+    <div id="ft_copy">Copyright &copy; 2020 <?php echo $default['de_admin_company_name']; ?>. All Rights Reserved.</div>
 </div>
 
 <?php

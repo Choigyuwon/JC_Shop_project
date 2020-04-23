@@ -102,7 +102,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_SHOP_SKIN_URL.'/style.css">', 
 
     <?php } else { // 오늘 본 상품이 없을 때 ?>
 
-    <p class="li_empty">없음</p>
+    <p class="li_empty">본 상품이 없네요. 상품 클릭!</p>
 
     <?php } ?>
 </div>

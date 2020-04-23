@@ -78,7 +78,9 @@ border:1px solid #558ab7 !important;
 #hd_wrapper {position:relative;margin:0 auto;height:140px;zoom:1}
 #hd_wrapper:after {display:block;visibility:hidden;clear:both;content:""}
 
-#logo {float:left;padding:30px 0 0; width: 10px; height: 10px;}
+#logo {float:left;padding:30px 0 0;}
+#logosize{width: 300px; height: 300px;}
+#logosize2{width: 200px; height: 200px; float:left;}
 
 .hd_sch_wr {float:left;padding:30px 0;;width:445px;margin-left:65px}
 #hd_sch h3 {position:absolute;font-size:0;line-height:0;overflow:hidden}
@@ -193,6 +195,10 @@ box-shadow:0 2px 5px rgba(0,0,0,0.2)}
 #ft_link a {display:block;color:#fff;line-height:2em;font-weight:bold}
 #ft_company h2 {font-size:1.2em;margin-bottom:20px}
 #ft_company {font-weight:normal;color:#e3e3e3;line-height:2em}
+
+#ft_bank {color : white;}
+#ft_bankh2{font-weight: bold; font-size:15px;}
+
 #ft_catch {margin:20px 0 10px}
 #ft_copy {text-align:center;width:1200px;margin:0 auto;padding:20px 0;color:#5b5b5b;font-size:0.92em;border-top:1px solid #383838}
 #top_btn {position:fixed;bottom:20px;right:20px;width:50px;height:50px;line-height:46px;border:2px solid #333;color:#333;text-align:center;font-size:15px;z-index:90;background:rgba(255,255,255,0.5)}
