@@ -60,6 +60,7 @@ include_once(G5_THEME_SHOP_PATH.'/shop.head.php');
 
     async function predict() {
         const prediction = await model.predict(webcam.canvas);
+
         if(prediction[0].className == "blackbag" && prediction[0].probability.toFixed(2) == 1.00) {
             //labelContainer.childNodes[0].innerHTML = "<font color=#483d8b>검정색 가방이다. 크로스백으로 요즘 많이 사용한다.</font>"
             alert("검정색 가방입니다. 유사 상품이 있는 곳으로 이동합니다.");
