@@ -7,6 +7,7 @@ $uid     = trim($_REQUEST['uid']);
 $subject = trim($_REQUEST['subject']);
 $content = trim($_REQUEST['content']);
 
+
 if ($subject && $content) {
     $sql = " select count(*) as cnt from {$g5['autosave_table']} where mb_id = '{$member['mb_id']}' and as_subject = '$subject' and as_content = '$content' ";
     $row = sql_fetch($sql);
