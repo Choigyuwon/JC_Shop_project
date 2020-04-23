@@ -244,7 +244,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
             }
         }
 
-        <?php echo $captcha_js; // 캡챠 사용시 자바스크립트에서 입력된 캡챠를 검사함  ?>
+         // 캡챠 사용시 자바스크립트에서 입력된 캡챠를 검사함  ?>
 
         document.getElementById("btn_submit").disabled = "disabled";
 
