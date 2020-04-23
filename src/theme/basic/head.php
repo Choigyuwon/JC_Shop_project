@@ -77,7 +77,7 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
 
     </div>
 
-
+    <!-- del_js -->
 </div>
 <!-- } 상단 끝 -->
 

@@ -132,6 +132,8 @@ border:1px solid #558ab7 !important;
 .hd_menu li:last-child a {border-right:0}
 .hd_menu li a {display:block;color:#fff;border-right:1px solid #333}
 
+/* copy_js */
+
 
 /* 메인메뉴 */
 #gnb {position:relative;background:#fff}
