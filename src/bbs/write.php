@@ -390,11 +390,15 @@ else
 $captcha_html = '';
 $captcha_js   = '';
 $is_use_captcha = ((($board['bo_use_captcha'] && $w !== 'u') || $is_guest) && !$is_admin) ? 1 : 0;
-
+/*
 if ($is_use_captcha) {
     $captcha_html = captcha_html();
     $captcha_js   = chk_captcha_js();
-}
+}*/
+if ($bo_table=="sms") { } else { if ($is_use_captcha) {
+    $captcha_html = captcha_html();
+    $captcha_js   = chk_captcha_js();
+}}
 
 $is_dhtml_editor = false;
 $is_dhtml_editor_use = false;
