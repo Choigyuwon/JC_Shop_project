@@ -629,7 +629,7 @@ background:url('img/select_arrow.png') no-repeat 96% 50%/* 화살표 아이콘 �
 #sit_info {display:inline-flex;position:relative;width:100%;min-height:600px;margin-top:20px;margin-bottom:30px;border:1px solid #e8e8e8;background:#fff}
 #sit_info:after {display:block;visibility:hidden;clear:both;content:""}
 
-#sit_tab {width:928px;display:table-cell}
+#sit_tab {width:100%;display:table-cell}
 #sit_tab:after {display:block;visibility:hidden;clear:both;content:""}
 #sit_tab .tab_tit {border-bottom:1px solid #e8e8e8;background:#fff;padding:0 10px}
 #sit_tab .tab_tit:after {display:block;visibility:hidden;clear:both;content:""}
@@ -967,3 +967,9 @@ box-shadow:0px 1px 6px 0 #dedede
 .couponzone_list ul li .coupon_btn .disabled {background:#c6c6c6;border:1px;color:#fff;border-color:#c6c6c6}
 .couponzone_list ul li .coupon_btn .disabled:hover {background:#c6c6c6;border:1px;color:#fff;border-color:#c6c6c6}
 .couponzone_list .no_coupon {position:relative;padding:100px 0;text-align:center;color:#999}
+
+#sit_rel {position:relative;border:1px solid #e8e8e8;padding:35px;margin-top:20px;background:#fff}
+#sit_rel:after {display:block;visibility:hidden;clear:both;content:""}
+#sit_rel h2 {font-size:1.6em;margin:0 0 30px;text-align:center}
+#sit_rel .bx-wrapper {margin:0 auto}
+#sit_rel .bx-controls-direction {position:absolute;top:25px;right:35px}

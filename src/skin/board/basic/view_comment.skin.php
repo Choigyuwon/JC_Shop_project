@@ -255,7 +255,6 @@ function fviewcomment_submit(f)
         }
     }
 
-    <?php if($is_guest) echo chk_captcha_js();  ?>
 
     set_comment_token(f);
 
@@ -308,9 +307,9 @@ function comment_box(comment_id, work)
         document.getElementById('comment_id').value = comment_id;
         document.getElementById('w').value = work;
 
-        if(save_before)
+        /*if(save_before)
             $("#captcha_reload").trigger("click");
-
+*/
         save_before = el_id;
     }
 }
