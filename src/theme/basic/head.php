@@ -25,95 +25,59 @@ include_once(G5_LIB_PATH.'/popular.lib.php');
     <h1 id="hd_h1"><?php echo $g5['title'] ?></h1>
     <div id="skip_to_container"><a href="#container">본문 바로가기</a></div>
 
-    <?php
-    if(defined('_INDEX_')) { // index에서만 실행
+    <?php if(defined('_INDEX_')) { // index에서만 실행
         include G5_BBS_PATH.'/newwin.inc.php'; // 팝업레이어
-    }
-    ?>
+    } ?>
+
     <div id="tnb">
         <div class="inner">
-            <?php if(G5_COMMUNITY_USE) { ?>
-                <ul id="hd_define">
-                </ul>
-            <?php } ?>
+            <ul id="hd_define">
+            </ul>
+            <ul class="hd_login">
+                <?php if ($is_member) {  ?>
+                    <li class="shop_login">
+                        <?php echo outlogin('theme/shop_basic'); // 아웃로그인 ?>
+                    </li>
+                    <li class="shop_cart"><a href="<?php echo G5_SHOP_URL; ?>/cart.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="sound_only">장바구니</span><span class="count"><?php echo get_boxcart_datas_count(); ?></span></a></li>
+                <?php } else { ?>
+                    <li class="login"><a href="<?php echo G5_BBS_URL ?>/login.php?url=<?php echo $urlencode; ?>">로그인</a></li>
+                <?php }  ?>
+            </ul>
         </div>
     </div>
     <div id="hd_wrapper">
-
-        <div id="logo" class="ft_cnt">
+        <div id="logo">
             <a href="<?php echo G5_SHOP_URL; ?>/"><img src="<?php echo G5_DATA_URL; ?>/common/jc_logo" id="logosize" alt="<?php echo $config['cf_title']; ?>"></a>
         </div>
-
         <div class="hd_sch_wr">
             <fieldset id="hd_sch">
-                <legend>사이트 내 전체검색</legend>
-                <form name="fsearchbox" method="get" action="<?php echo G5_BBS_URL ?>/search.php" onsubmit="return fsearchbox_submit(this);">
-                    <input type="hidden" name="sfl" value="wr_subject||wr_content">
-                    <input type="hidden" name="sop" value="and">
-                    <label for="sch_stx" class="sound_only">검색어 필수</label>
-                    <input type="text" name="stx" id="sch_stx" maxlength="20" placeholder="검색어를 입력해주세요">
+                <legend>쇼핑몰 전체검색</legend>
+                <form name="frmsearch1" action="<?php echo G5_SHOP_URL; ?>/search.php" onsubmit="return search_submit(this);">
+
+                    <input type="text" name="q" value="<?php echo stripslashes(get_text(get_search_string($q))); ?>" id="sch_str" required placeholder="검색어를 입력해주세요">
                     <button type="submit" id="sch_submit" value="검색"><i class="fa fa-search" aria-hidden="true"></i><span class="sound_only">검색</span></button>
+                    <button type="button" id="sch_submit2" onclick="location.href='https://gw2988.cafe24.com/g5/theme/basic/shop/JCai.php' ">Ai CAM</button>
                 </form>
-
                 <script>
-                    function fsearchbox_submit(f)
-                    {
-                        if (f.stx.value.length < 2) {
+                    function search_submit(f) {
+                        if (f.q.value.length < 2) {
                             alert("검색어는 두글자 이상 입력하십시오.");
-                            f.stx.select();
-                            f.stx.focus();
+                            f.q.select();
+                            f.q.focus();
                             return false;
                         }
-
-                        // 검색에 많은 부하가 걸리는 경우 이 주석을 제거하세요.
-                        var cnt = 0;
-                        for (var i=0; i<f.stx.value.length; i++) {
-                            if (f.stx.value.charAt(i) == ' ')
-                                cnt++;
-                        }
-
-                        if (cnt > 1) {
-                            alert("빠른 검색을 위하여 검색어에 공백은 한개만 입력할 수 있습니다.");
-                            f.stx.select();
-                            f.stx.focus();
-                            return false;
-                        }
-
                         return true;
                     }
                 </script>
-
             </fieldset>
-
-            <?php echo popular('theme/basic'); // 인기검색어, 테마의 스킨을 사용하려면 스킨을 theme/basic 과 같이 지정  ?>
         </div>
-        <ul class="hd_login">
-            <?php if ($is_member) {  ?>
-                <li><a href="<?php echo G5_BBS_URL ?>/member_confirm.php?url=<?php echo G5_BBS_URL ?>/register_form.php">정보수정</a></li>
-                <li><a href="<?php echo G5_BBS_URL ?>/logout.php">로그아웃</a></li>
-                <?php if ($is_admin) {  ?>
-                    <li class="tnb_admin"><a href="<?php echo correct_goto_url(G5_ADMIN_URL); ?>">관리자</a></li>
-                <?php }  ?>
-            <?php } else {  ?>
-                <li><a href="<?php echo G5_BBS_URL ?>/register.php">회원가입</a></li>
-                <li><a href="<?php echo G5_BBS_URL ?>/login.php">로그인</a></li>
-            <?php }  ?>
+        <!-- 쇼핑몰 배너 시작 { -->
+        <?php // echo display_banner('왼쪽'); ?>
+        <!-- } 쇼핑몰 배너 끝 -->
 
-        </ul>
     </div>
 
-    <script>
 
-        $(function(){
-            $(".gnb_menu_btn").click(function(){
-                $("#gnb_all, #gnb_all_bg").show();
-            });
-            $(".gnb_close_btn, #gnb_all_bg").click(function(){
-                $("#gnb_all, #gnb_all_bg").hide();
-            });
-        });
-
-    </script>
 </div>
 <!-- } 상단 끝 -->
 
