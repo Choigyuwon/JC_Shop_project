@@ -19,7 +19,7 @@ if(defined('G5_THEME_SHOP_PATH')) {
     }
 }
 
-$g5['title'] = "위시리스트";
+$g5['title'] = "좋아요리스트";
 include_once('./_head.php');
 ?>
 
@@ -147,3 +147,14 @@ include_once('./_head.php');
 <?php
 include_once('./_tail.php');
 ?>
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/5e46e727a89cda5a188607bb/default';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+    })();
+</script>

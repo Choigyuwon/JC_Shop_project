@@ -12,7 +12,7 @@ if (G5_IS_MOBILE) {
 }
 
 $type = preg_replace("/[\<\>\'\"\\\'\\\"\%\=\(\)\s]/", "", $_REQUEST['type']);
-if ($type == 1)      $g5['title'] = '히트상품';
+if ($type == 1)      $g5['title'] = '전체상품';
 else if ($type == 2) $g5['title'] = '추천상품';
 else if ($type == 3) $g5['title'] = '최신상품';
 else if ($type == 4) $g5['title'] = '인기상품';
@@ -92,3 +92,15 @@ echo get_paging($config['cf_write_pages'], $page, $total_page, "{$_SERVER['SCRIP
 <?php
 include_once('./_tail.php');
 ?>
+
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/5e46e727a89cda5a188607bb/default';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+    })();
+</script>
