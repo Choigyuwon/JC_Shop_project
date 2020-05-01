@@ -2,7 +2,7 @@
 
 /* 초기화 */
 html {overflow-y:scroll}
-body {margin:0;padding:0;font-size:0.75em;font-family:'Malgun Gothic', dotum, sans-serif;zoom:0.8;}
+body {margin:0;padding:0;font-size:0.75em;font-family:'Malgun Gothic', dotum, sans-serif;zoom:1;}
 html, h1, h2, h3, h4, h5, h6, form, fieldset, img {margin:0;padding:0;border:0}
 h1, h2, h3, h4, h5, h6 {font-size:1em;font-family:'Malgun Gothic', dotum, sans-serif}
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display:block}
@@ -18,7 +18,11 @@ p {margin:0;padding:0;word-break:break-all}
 hr {display:none}
 pre {overflow-x:scroll;font-size:1.1em}
 a {color:#000;text-decoration:none}
-
+@media(max-width: 768px){
+body{
+ height: auto;
+}
+}
 *, :after, :before {
  -webkit-box-sizing:border-box;
  -moz-box-sizing:border-box;
@@ -39,7 +43,7 @@ input[type=text]:focus,input[type=password]:focus, textarea:focus,select:focus {
  box-shadow:0 0 5px #9ed4ff;
  border:1px solid #558ab7 !important;
 }
-
+#boxbanner{position: absolute; margin-top:400px; margin-left: 5px;width: 40px;height: 40px;}
 .placeholdersjs {color:#aaa !important}
 #hd, #wrapper, #ft {min-width:1200px}
 
@@ -70,7 +74,7 @@ input, textarea {
 .hd_pops_footer .hd_pops_close {background:#393939;position:absolute;top:0;right:0}
 
 /* 상단 레이아웃 */
-#hd {background:#212020}
+#hd {background: #000000}
 #hd_h1 {position:absolute;font-size:0;line-height:0;overflow:hidden}
 
 #hd_wrapper {position:relative;margin:0 auto}
@@ -100,7 +104,7 @@ input, textarea {
  text-decoration:none;
  text-shadow:-1px 1px 0px #ffffff; }
 
-#tnb {border-bottom:1px solid #383838;margin:0 auto;}
+#tnb {border-bottom:1px solid #000000;margin:0 auto;}
 #tnb:after {display:block;visibility:hidden;clear:both;content:""}
 #tnb .inner {margin:0 auto}
 
@@ -117,7 +121,7 @@ input, textarea {
 #hd_qnb li:last-child {padding-right:0;margin-right:0;border-right:0}
 #hd_qnb li a {display:inline-block;color:#919191}
 
-.hd_login {position: absolute; right:240px; top:40px; z-index: 1;}
+.hd_login {position: relative;padding-left:1640px; padding-top: 20px;}
 .hd_login>li {float:left;position:relative;margin:0 5px}
 .hd_login>li.login a {color:#3a8afd;padding:10px; border-radius:3px;border:1px solid #3a8afd;z-index: 1;}
 .hd_login>li a {color:#fff}

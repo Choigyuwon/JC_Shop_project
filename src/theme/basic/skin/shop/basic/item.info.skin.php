@@ -15,6 +15,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_SHOP_CSS_URL.'/style.css">', 0
             <img src="<?php echo G5_DATA_URL; ?>/common/size1" width="100%">
             <img src="<?php echo G5_DATA_URL; ?>/common/size2" width="100%">
             <img src="<?php echo G5_DATA_URL; ?>/common/size3" width="100%">
+            <img src="<?php echo G5_DATA_URL; ?>/common/size4" width="100%">
         </p>
     </section>
 

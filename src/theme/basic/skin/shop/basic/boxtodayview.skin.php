@@ -15,7 +15,6 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_SHOP_SKIN_URL.'/style.css">', 
 <!-- 오늘 본 상품 시작 { -->
 <div id="stv">
     <h2 class="s_h2">오늘 본 상품 <span><?php echo get_view_today_items_count(); ?></span></h2>
-
     <?php if ($tv_datas) { // 오늘 본 상품이 1개라도 있을 때 ?>
     <?php
     $tv_tot_count = 0;
@@ -57,7 +56,6 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_SHOP_SKIN_URL.'/style.css">', 
     ?>
     <div id="stv_btn"></div>
     <span id="stv_pg"></span>
-
     <script>
     $(function() {
         var itemQty = <?php echo $tv_tot_count; ?>; // 총 아이템 수량

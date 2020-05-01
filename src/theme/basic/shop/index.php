@@ -1,3 +1,4 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <?php
 include_once('./_common.php');
 
@@ -10,7 +11,6 @@ define("_INDEX_", TRUE);
 
 include_once(G5_THEME_SHOP_PATH.'/shop.head.php');
 ?>
-
 <!-- 메인이미지 시작 { -->
 <?php echo display_banner('메인', 'mainbanner.10.skin.php'); ?>
 <!-- } 메인이미지 끝 -->
@@ -35,6 +35,7 @@ include_once(G5_THEME_SHOP_PATH.'/shop.head.php');
     $list->set_view('star', true);
     echo $list->run();
     ?>
+
 </section>
 <!-- } 히트상품 끝 -->
 <script>

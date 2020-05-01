@@ -17,30 +17,32 @@ include_once(G5_LIB_PATH.'/latest.lib.php');
 add_javascript('<script src="'.G5_JS_URL.'/owlcarousel/owl.carousel.min.js"></script>', 10);
 add_stylesheet('<link rel="stylesheet" href="'.G5_JS_URL.'/owlcarousel/owl.carousel.css">', 0);
 ?>
-
 <!-- 상단 시작 { -->
 <div id="hd">
+
     <h1 id="hd_h1"><?php echo $g5['title'] ?></h1>
     <div id="skip_to_container"><a href="#container">본문 바로가기</a></div>
 
     <?php if(defined('_INDEX_')) { // index에서만 실행
         include G5_BBS_PATH.'/newwin.inc.php'; // 팝업레이어
 	} ?>
-     
+    <ul class="hd_login">
+        <?php if ($is_member) {  ?>
+            <li class="shop_login">
+                <?php echo outlogin('theme/shop_basic'); // 아웃로그인 ?>
+            </li>
+            <li class="shop_cart"><a href="<?php echo G5_SHOP_URL; ?>/cart.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="sound_only">장바구니</span><span class="count"><?php echo get_boxcart_datas_count(); ?></span></a></li>
+        <?php } else { ?>
+            <li class="login"><a href="<?php echo G5_BBS_URL ?>/login.php?url=<?php echo $urlencode; ?>">로그인</a></li>
+        <?php }  ?>
+    </ul>
 	<div id="tnb">
     	<div class="inner">
+
     		<ul id="hd_define">
+
     		</ul>
-	<ul class="hd_login">        
-            <?php if ($is_member) {  ?>
-			<li class="shop_login">
-				<?php echo outlogin('theme/shop_basic'); // 아웃로그인 ?>	
-			</li>
-			<li class="shop_cart"><a href="<?php echo G5_SHOP_URL; ?>/cart.php"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="sound_only">장바구니</span><span class="count"><?php echo get_boxcart_datas_count(); ?></span></a></li>
-            <?php } else { ?>
-            <li class="login"><a href="<?php echo G5_BBS_URL ?>/login.php?url=<?php echo $urlencode; ?>">로그인</a></li>
-            <?php }  ?>
-        </ul>
+<!-- -->
 		</div>
 	</div>
     <div id="hd_wrapper">
@@ -70,11 +72,10 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_JS_URL.'/owlcarousel/owl.carou
 	        </fieldset>
 		</div>
         <!-- 쇼핑몰 배너 시작 { -->
-        <?php // echo display_banner('왼쪽'); ?>
+        <?php //echo display_banner('왼쪽'); ?>
         <!-- } 쇼핑몰 배너 끝 -->
 
     </div>
-
     <div id="hd_menu">
     	<button type="button" id="menu_open"><i class="fa fa-bars" aria-hidden="true"></i> 카테고리</button>
 		<?php include_once(G5_THEME_SHOP_PATH.'/category.php'); // 분류 ?>
@@ -204,6 +205,7 @@ jQuery(function ($){
             <?php include_once(G5_SHOP_SKIN_PATH.'/boxcategory.skin.php'); // 상품분류 ?>
             <?php if($default['de_type4_list_use']) { ?>
             <!-- 인기상품 시작 { -->
+
             <section id="side_pd">
 
                 <h2><a href="<?php echo shop_type_url('4'); ?>">인기상품</a></h2>
@@ -224,7 +226,7 @@ jQuery(function ($){
 
                 <!-- } 인기상품 끝 -->
             <?php } ?>
-            
+
             <?php echo display_banner('왼쪽', 'boxbanner.skin.php'); ?>
             <?php echo poll('theme/shop_basic'); // 설문조사 ?>
         </div>

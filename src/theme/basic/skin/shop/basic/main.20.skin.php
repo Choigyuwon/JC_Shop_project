@@ -12,8 +12,7 @@ add_stylesheet('<link rel="stylesheet" href="'.G5_SHOP_SKIN_URL.'/style.css">', 
 
 <!-- 이전 재생 정지 다음 버튼 시작 { -->
 <ul id="btn_smt_<?php echo $this->type; ?>" class="sctrl">
-    <li><button type="button" class="sctrl_play">효과재생<span></span></button></li>
-    <li><button type="button" class="sctrl_stop">효과정지<span></span></button></li>
+
 </ul>
 <!-- } 이전 재생 정지 다음 버튼 끝 -->
 
