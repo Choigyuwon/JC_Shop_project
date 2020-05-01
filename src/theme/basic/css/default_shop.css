@@ -91,12 +91,15 @@ input, textarea {
 #hd_sch #sch_submit {float:left;width:60px;height:45px;border:0;background:#2c2c2c;color:#fff;border-radius:0 30px 30px 0;cursor:pointer;font-size:16px}
 #hd_sch #sch_submit2 {
  border-radius:30px;
+ border-color: black;
  overflow: hidden;
  display:inline-block;
  cursor:pointer;
- background: url( "https://gw2988.cafe24.com/g5/data/editor/2004/9f3886bd274acc14e818f038d8c2a745_1587725404_016.jpg" ) no-repeat;
+ float:left;margin-top:50px; margin-left: 200px;
+ background: black;
  background-size: cover;
  width: 100px;
+ color:white;
  height: 100px;
 }
 
