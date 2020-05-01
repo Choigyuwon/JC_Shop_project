@@ -61,16 +61,36 @@ include_once(G5_THEME_SHOP_PATH.'/shop.head.php');
     async function predict() {
         const prediction = await model.predict(webcam.canvas);
 
-        if(prediction[0].className == "blackbag" && prediction[0].probability.toFixed(2) == 1.00) {
-            //labelContainer.childNodes[0].innerHTML = "<font color=#483d8b>검정색 가방이다. 크로스백으로 요즘 많이 사용한다.</font>"
-            alert("검정색 가방입니다. 유사 상품이 있는 곳으로 이동합니다.");
-            location.href="https://gw2988.cafe24.com/g5/theme/basic/shop/"
-        } else if(prediction[1].className == "hair" && prediction[1].probability.toFixed(2) == 1.00) {
-            labelContainer.childNodes[0].innerHTML = "<font color=#483d8b>놀이동산에서 구매할 수 있는 머리띠 이다.</font>"
-            alert("머리띠 입니다. 유사 상품이 있는 곳으로 이동합니다.");
-        } else {
-            labelContainer.childNodes[0].innerHTML = "<font color=#483d8b size='5'>알 수 없음</font>"
+        <?
+        $lines = @file("../../../product_var.txt") or $result = "파일을 읽을 수 없습니다.";
+        ?>
+
+        var js_ary;
+        var i, j;
+        js_ary = <?php echo json_encode($lines) ?>;
+        tes = String(js_ary);
+        var strar = tes.split(",");
+
+        for(i = 0; i < strar.length; i++) {
+            strar[i] = strar[i].slice(0, strar[i].length - 2);
         }
+        for(i = 1; i < strar.length; i+=5) {
+            for(j = 0; j < strar.length / 5; j++) {
+                if(prediction[j].className == strar[i] && prediction[j].probability.toFixed(2) <= 1.00 && prediction[j].probability.toFixed(2) >= 0.95) {
+                    alert(strar[i+1]);
+                    location.href=strar[i+2];
+                }
+            }
+        }
+        /*
+        if(prediction[0].className == "shirt_pattern_shirt02" && prediction[0].probability.toFixed(2) <= 1.00 && prediction[0].probability.toFixed(2) >= 0.90) {
+            //labelContainer.childNodes[0].innerHTML = "<font color=#483d8b>검정색 가방이다. 크로스백으로 요즘 많이 사용한다.</font>"
+            alert("빨간색 계열의 바탕색에 검은색 체크무늬 가 들어간 셔츠!");
+            location.href="http://gw2988.cafe24.com/g5/shop/item.php?it_id=1587623769"
+        }
+        else {
+            labelContainer.childNodes[0].innerHTML = "<font color=#483d8b size='5'>알 수 없음</font>"
+        }*/
     }
 </script>
 <section id="side_pd">
