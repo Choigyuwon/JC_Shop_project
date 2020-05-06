@@ -6,14 +6,14 @@ define("_INDEX_", TRUE);
 include_once(G5_THEME_MSHOP_PATH.'/shop.head.php');
 ?>
 
-<script src="<?php echo G5_JS_URL; ?>/swipe.js"></script>
-<script src="<?php echo G5_JS_URL; ?>/shop.mobile.main.js"></script>
+    <script src="<?php echo G5_JS_URL; ?>/swipe.js"></script>
+    <script src="<?php echo G5_JS_URL; ?>/shop.mobile.main.js"></script>
 
-    <?php echo display_banner('메인', 'mainbanner.10.skin.php'); ?>
+<?php echo display_banner('메인', 'mainbanner.10.skin.php'); ?>
 
-    <?php if($default['de_mobile_type1_list_use']) { ?>
+<?php if($default['de_mobile_type1_list_use']) { ?>
     <div class="sct_wrap">
-            <h2><a href="<?php echo shop_type_url('1'); ?>">히트상품</a></h2>
+        <h2><a href="<?php echo shop_type_url('1'); ?>">히트상품</a></h2>
         <?php
         $list = new item_list();
         $list->set_mobile(true);
@@ -27,11 +27,14 @@ include_once(G5_THEME_MSHOP_PATH.'/shop.head.php');
         echo $list->run();
         ?>
     </div>
-    <?php } ?>
 
-    <?php echo display_banner('왼쪽', 'boxbanner.skin.php'); ?>
+    <button type="button" id="sch_submit2" onclick="location.href='https://gw2988.cafe24.com/g5/theme/basic/shop/JCai.php' " style="color: white;"><img src="<?php echo G5_DATA_URL; ?>/common/AICAM" style="background-repeat: no-repeat; width: 100px;height: 100px; background-color: black;color: white;">WebCams</button>
+    <div style="color: white; position: absolute; margin-top: 200px; margin-left: 175px; font-size: 20px;">Search with CAM</div>
+<?php } ?>
 
-    <?php if($default['de_mobile_type2_list_use']) { ?>
+<?php echo display_banner('왼쪽', 'boxbanner.skin.php'); ?>
+
+<?php if($default['de_mobile_type2_list_use']) { ?>
     <div class="sct_wrap">
         <h2><a href="<?php echo shop_type_url('2');; ?>">추천상품</a></h2>
         <?php
@@ -47,9 +50,9 @@ include_once(G5_THEME_MSHOP_PATH.'/shop.head.php');
         echo $list->run();
         ?>
     </div>
-    <?php } ?>
+<?php } ?>
 
-    <?php if($default['de_mobile_type3_list_use']) { ?>
+<?php if($default['de_mobile_type3_list_use']) { ?>
     <div class="sct_wrap">
         <h2><a href="<?php echo shop_type_url('3');; ?>">최신상품</a></h2>
         <?php
@@ -66,9 +69,9 @@ include_once(G5_THEME_MSHOP_PATH.'/shop.head.php');
         echo $list->run();
         ?>
     </div>
-    <?php } ?>
+<?php } ?>
 
-    <?php if($default['de_mobile_type4_list_use']) { ?>
+<?php if($default['de_mobile_type4_list_use']) { ?>
     <div class="sct_wrap">
         <h2><a href="<?php echo shop_type_url('4'); ?>">인기상품</a></h2>
         <?php
@@ -84,9 +87,9 @@ include_once(G5_THEME_MSHOP_PATH.'/shop.head.php');
         echo $list->run();
         ?>
     </div>
-    <?php } ?>
+<?php } ?>
 
-    <?php if($default['de_mobile_type5_list_use']) { ?>
+<?php if($default['de_mobile_type5_list_use']) { ?>
     <div class="sct_wrap">
         <h2><a href="<?php echo shop_type_url('5'); ?>">할인상품</a></h2>
         <?php
@@ -102,9 +105,9 @@ include_once(G5_THEME_MSHOP_PATH.'/shop.head.php');
         echo $list->run();
         ?>
     </div>
-    <?php } ?>
+<?php } ?>
 
-    <?php include_once(G5_MSHOP_SKIN_PATH.'/main.event.skin.php'); // 이벤트 ?>
+<?php include_once(G5_MSHOP_SKIN_PATH.'/main.event.skin.php'); // 이벤트 ?>
 
     <!-- 커뮤니티 최신글 시작 { -->
     <section id="sidx_lat">
@@ -112,9 +115,9 @@ include_once(G5_THEME_MSHOP_PATH.'/shop.head.php');
     </section>
 
 
-<script>
-    $("#container").addClass("idx-container");
-</script>
+    <script>
+        $("#container").addClass("idx-container");
+    </script>
 
 <?php
 include_once(G5_THEME_MSHOP_PATH.'/shop.tail.php');

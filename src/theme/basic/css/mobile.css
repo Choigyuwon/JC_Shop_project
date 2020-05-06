@@ -1,5 +1,6 @@
 @charset "utf-8";
 
+
 /* 초기화 */
 html {overflow-y:scroll;height:100%;min-width:320px}
 body {margin:0;padding:0;font-size:0.75em;background:#f8f8f8;height:100%;font-family:'Malgun Gothic', dotum, sans-serif}
@@ -118,6 +119,7 @@ box-shadow:0 0 10px rgba(181, 181, 181, 0.4);
 #ft h1 {width:0;height:0;font-size:0;line-height:0;overflow:hidden}
 #ft p {margin:0;padding:10px 0;line-height:1.8em}
 
+#ft_corp {color: grey}
 #ft_copy {padding:10px;line-height:2em;text-align:center;color:#777}
 #ft_copy #ft_company {text-align:center}
 #ft_copy #ft_company a {display:inline-block;padding:0 10px;line-height:1em;border-left:1px solid #333;color:#fff}
@@ -128,13 +130,12 @@ box-shadow:0 0 10px rgba(181, 181, 181, 0.4);
 #ft_copy a {color:inherit;text-decoration:none}
 
 #top_btn {position:fixed;bottom:10px;right:15px;width:50px;height:50px;line-height:36px;border:2px solid #d2d2d2;border-radius:50%;background:#fff;color:#d2d2d2;text-align:center;font-size:15px;z-index:99;
--webkit-box-shadow:1px 2px 5px rgba(191, 191, 191, 0.4);
--moz-box-shadow:1px 2px 5px rgba(191, 191, 191, 0.4);
-box-shadow:1px 2px 5px rgba(191, 191, 191, 0.4)}
+  -webkit-box-shadow:1px 2px 5px rgba(191, 191, 191, 0.4);
+  -moz-box-shadow:1px 2px 5px rgba(191, 191, 191, 0.4);
+  box-shadow:1px 2px 5px rgba(191, 191, 191, 0.4)}
 #top_btn i {font-size:1.4em}
 #top_btn:hover {background:#3b8afb;border-color:#3b8afb;color:#fff}
 #device_change {display:block;line-height:40px;border-radius:5px;background:#302e2e;color:#777;font-size:1em;text-decoration:none;text-align:center}
-
 /* 게시물 선택복사 선택이동 */
 #copymove {}
 .copymove_current {float:right;color:#ff3061}

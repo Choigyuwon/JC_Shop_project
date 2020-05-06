@@ -91,6 +91,7 @@ include_once(G5_THEME_SHOP_PATH.'/shop.head.php');
         else {
             labelContainer.childNodes[0].innerHTML = "<font color=#483d8b size='5'>알 수 없음</font>"
         }*/
+        alert("asd");
     }
 </script>
 <section id="side_pd">
