@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 /* 초기화 */
-body {margin:0;padding:0;font-size:0.813em;weight:100%;height:100%;font-family:HelveticaNeue-Light,AppleSDGothicNeo-Light,'Malgun Gothic','맑은 고딕',sans-serif;;background:#f8f8f8;min-width:320px;-webkit-text-size-adjust: none; }
+body {margin:0;padding:0;font-size:0.813em;height:100%;font-family:HelveticaNeue-Light,AppleSDGothicNeo-Light,'Malgun Gothic','맑은 고딕',sans-serif;;background:#f8f8f8;min-width:320px;-webkit-text-size-adjust: none; }
 body.is_hidden{overflow:hidden}
 html, h1, h2, h3, h4, h5, h6, form, fieldset {margin:0;padding:0;border:0}
 h1, h2, h3, h4, h5, h6 {font-size:1em}
@@ -76,6 +76,7 @@ input, textarea {
 #hd_sch .sch_inner {position:relative}
 #hd_sch #sch_str {width:100%;height:35px;background:#3a3838;border:0;padding:0 10px 0 40px;color:#000;color:#fff}
 #hd_sch .sch_submit {position:absolute;top:0;left:0;width:40px;height:35px;border:0;border-radius:0 3px 3px 0;cursor:pointer;background:none;font-size:15px;color:#878786}
+#hd_sch .btn_close {position:absolute;top:10px;right:0px;width:50px;height:35px;border:0;background:none;color:#c2bbb5;font-size:18px}
 #hd_sch .sch_submit2 {
     border-radius:30px;
     border-color: black;
@@ -86,24 +87,22 @@ input, textarea {
     background: black;
     background-size: cover;
     width: 100px;
-    color:white;
+    color:black;
     height: 100px;
 }
-#hd_sch .btn_close {position:absolute;top:10px;right:0px;width:50px;height:35px;border:0;background:none;color:#c2bbb5;font-size:18px}
-
 
 /*카테고리*/
 .menu {display:none;position:fixed;top:0;height:100%;z-index:99999;-webkit-backface-visibility:hidden;width:100%;background:#efefef}
 .menu .menu_wr{;width:100%;height:100%;overflow-y:auto;background:#eee;position:relative;z-index:199919;
-    -webkit-box-shadow: 0 0 5px rgba(55,55,5,0.4);
-    -moz-box-shadow: 0 0 5px rgba(55,55,5,0.4);
+    -webkit-box-shadow: 0 0 5px rgba(55,55,5,0.4));
+    -moz-box-shadow: 0 0 5px rgba(55,55,5,0.4));
     box-shadow: 0 0 5px rgba(55,55,5,0.4);}
 .menu .menu_close {position:absolute;top:50%;right:0px;width:40px;height:40px;background:none;color:#fff;font-size:20px;margin-top:-20px;border:0;z-index:199999}
 
 .cate {background:#fff;border-bottom:1px solid #e1e1e1}
 .cate a {display:block;color:#333;padding:0 10px;border-bottom:1px solid #efefef}
 .cate li {position:relative;line-height:40px}
-.cate li button {position:absolute;top:0;right:0;border:0;width:30px;height:40px;overflow:hidden;border:0;background:url(../img/mobile/gnb_bg.png) no-repeat 50% 50%;text-indent:-9999px}
+.cate li button {position:absolute;top:0;right:0;background:url;border:0;width:30px;height:40px;overflow:hidden;border:0;background:url(../img/mobile/gnb_bg.png) no-repeat 50% 50%;text-indent:-9999px}
 .cate li button.ct_cl {background:url(../img/mobile/gnb_bg2.png) no-repeat 50% 50%}
 
 .sub_cate {display:none}
@@ -191,7 +190,7 @@ input, textarea {
 #sit_opt_added .sit_opt_prc {float:right;display:block;padding:0 3px;text-align:right;line-height:30px;font-size:1.183em;font-weight:bold}
 
 /* 장바구니 */
-#mod_option_frm {z-index:10000;position:fixed;top:10%;left:5%;width:90%;height:auto !important;height:80%;max-height:80%;border:1px solid #dde7e9;border-radius:3px;background:#fff;overflow-y:auto;overflow-x:auto;}
+#mod_option_frm {z-index:10000;position:fixed;top:10%;left:5%;width:90%;height:auto !important;height:80%;max-height:80%;border:1px solid #dde7e9;border-radius:3px;background:#fff;overflow-y:auto;overflow-x:none}
 #mod_option_frm h2 {border-bottom: 1px solid #e8e8e8;padding: 0 20px;line-height: 50px;font-size: 1.25em;}
 #sod_bsk_list .mod_option_bg {content:"";position:fixed;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.1);display:block;z-index:9999}
 #mod_option_frm  #sit_sel_option{margin:15px }
@@ -338,15 +337,15 @@ input, textarea {
 
 /* 쿠폰 */
 #scp_list {text-align:center;background:#fff}
-#scp_list .li_pd {position:relative;padding:10px}   #scp_list h1 {text-align:left}
+#scp_list .li_pd {position:relative;padding:10px}	#scp_list h1 {text-align:left}
 #scp_list .li_title {font-weight:bold;font-size:1.167em}
 #scp_list ul:after {display:block;visibility:hidden;clear:both;content:""}
 #scp_list .pd_price {position:absolute;top:10px;right:10px}
 #scp_list li {padding:15px;border-bottom:1px solid #ececec;text-align:left}
 #scp_list .pd_price strong {color:#ff006c;font-size:1.5em}
 #scp_list .cou_top {margin-bottom:10px;position:relative}
-#scp_list .li_target {color:#666;margin:5px 0 0;background:#f3f3f3;border-top:1px dotted #ccc;padding:5px 10px}   #scp_list .cou_tit {font-size:1.25em;font-weight:bold}
-#scp_list .pd_date {float:right;color:#777}   #scp_list .cou_pri {font-size:1.25em;color:#3a8afd;font-weight:bold;position:absolute;top:0;right:0;}
+#scp_list .li_target {color:#666;margin:5px 0 0;background:#f3f3f3;border-top:1px dotted #ccc;padding:5px 10px}	#scp_list .cou_tit {font-size:1.25em;font-weight:bold}
+#scp_list .pd_date {float:right;color:#777}	#scp_list .cou_pri {font-size:1.25em;color:#3a8afd;font-weight:bold;position:absolute;top:0;right:0;}
 #scp_list .cou_target {color:#8cc152;background:#edfbde;padding:5px;line-height:20px;font-size:0.92em;border-radius:5px}
 #scp_list .cou_date {float:right;color:#888d92}
 #scp_list .btn_close {margin:20px auto}
@@ -367,7 +366,7 @@ input, textarea {
 #sod_addr .addr_btn:after {display:block;visibility:hidden;clear:both;content:""}
 #sod_addr .sel_address {width:32%;float:left;margin-right:1%;height:30px;background:none;border:1px solid #333;color:#333;padding:0 5px}
 #sod_addr .del_address {display:block;width:32%;text-align:center;float:left;margin-right:1%;border:1px solid #aaa;background:none;color:#888;padding:0 5px;height:30px;line-height:28px;vertical-align:middle}
-#sod_addr input[type="radio"] {position:absolute;width:0;height:0;overflow:hidden;visibility:hidden;text-indent:-999px;left:0;z-index:-1;}
+#sod_addr input[type="radio"] {position:absolute;width:0;height:0;overflow:hidden;visibility:hidden;text-indent:-999px;left:0;z-index:-1px}
 #sod_addr .add_lb {display:inline-block;float:left;width:32%;text-align:center;border:1px solid #4162ff;color:#4162ff;height:30px;line-height:28px}
 #sod_addr input[type="radio"]:checked+.add_lb {z-index:3;background:#4162ff;color:#fff}
 
@@ -501,7 +500,7 @@ input, textarea {
 
 #sod_ws_act {text-align:center;margin:10px}
 #sod_ws_act:after {display:block;visibility:hidden;clear:both;content:''}
-#sod_ws_act .btn01 {float:left;width:49%;height:50px;background:#fff;font-weight:bold;color:#000;border-radius:5px;font-weight:bold;font-size:1.25em}
+#sod_ws_act .btn01 {float:left;width:49%;height:50px;background:#fff;font-weight:bold;color:#000;border-radius:5px;border-radius:1px solid #98a3b3;font-weight:bold;font-size:1.25em}
 #sod_ws_act .btn02 {float:right;width:49%;height:50px;border:1px solid #1c70e9;color:#fff;border-radius:5px;font-weight:bold;background:#3a8afd;font-weight:bold;font-size:1.25em}
 
 /* 주문내역 include  */
@@ -587,7 +586,7 @@ a.btn02 {display:inline-block;padding:8px 7px 7px;border:1px solid #3b3c3f;backg
 a.btn02:focus, .btn02:hover {text-decoration:none}
 button.btn02 {display:inline-block;margin:0;padding:7px;border:1px solid #3b3c3f;background:#4b545e;color:#fff;text-decoration:none}
 .btn_confirm {text-align:center} /* 서식단계 진행 */
-.btn_submit {padding:0 5px;border:0;background:#3a8afd;border:1px solid #1c70e9;color:#fff;letter-spacing:-0.1em;border-radius:3px}
+.btn_submit {padding:0 5px;border:0;background:#3a8afd;border:1px solid #1c70e9;color:#fff;letter-spacing:-0.1em;border-radius:3px}}
 fieldset .btn_submit {padding:0 7px;height:24px;line-height:1em}
 a.btn_cancel {display:inline-block;padding:8px 7px 7px;border:1px solid #ccc;background:#fff;color:#000;text-decoration:none;vertical-align:middle}
 button.btn_cancel {display:inline-block;padding:7px;border:1px solid #ccc;background:#fafafa;color:#000;vertical-align:top;text-decoration:none}
@@ -829,7 +828,7 @@ a.btn_admin:focus, a.btn_admin:hover {}
 .sod_right #sod_bsk_tot{margin:10px}
 #sod_frm_taker textarea{width:100%;height:80px}
 
-#od_pay_sl input[type="radio"] {position:absolute;width:0;height:0;overflow:hidden;visibility:hidden;text-indent:-999px;left:0;z-index:-1;}
+#od_pay_sl input[type="radio"] {position:absolute;width:0;height:0;overflow:hidden;visibility:hidden;text-indent:-999px;left:0;z-index:-1px}
 #od_pay_sl .lb_icon {display:inline-block;float:left;width:150px;background:#fff;border:1px solid #eceff4;margin:-1px 0 0 -1px;cursor:pointer;height:60px;position:relative;padding-left:65px;padding-top:20px;z-index:1}
 #od_pay_sl input[type="radio"]:checked+.lb_icon {border:1px solid #ff006c;z-index:3}
 
@@ -908,7 +907,7 @@ a.btn_admin:focus, a.btn_admin:hover {}
 #od_tot_price span{float:left;font-weight:bold}
 #od_tot_price strong{font-size:1.5em;color:#ff006c}
 #od_pay_sl h3{font-size:1.167em;margin:20px 0 5px}
-#od_pay_sl input[type="radio"]{position:absolute;width:0;height:0;overflow:hidden;visibility:hidden;text-indent:-999px;left: 0;z-index:-1;}
+#od_pay_sl input[type="radio"]{position:absolute;width:0;height:0;overflow:hidden;visibility:hidden;text-indent:-999px;left: 0;z-index: -1px;}
 #od_pay_sl .lb_icon {display: inline-block;float:left;width:50%;background:#fff;border:1px solid #eceff4;margin:-1px 0 0 -1px;cursor: pointer;height:60px;position:relative;padding-left:65px;padding-top:20px;z-index:1}
 #od_pay_sl input[type="radio"]:checked+.lb_icon {border:1px solid #ff006c;z-index:3}
 #sod_frm_paysel {}
@@ -1036,3 +1035,4 @@ a.btn_admin:focus, a.btn_admin:hover {}
 .chk_box input[type="radio"] + label span {position:absolute;top:0;left:0;width:15px;height:15px;display:block;background:#fff;border:1px solid #cdd6df;border-radius:50%}
 .chk_box input[type="radio"]:checked + label {color:#305af9}
 .chk_box input[type="radio"]:checked + label span:before {width:7px;height:7px;background:#305af9;content:'';position:absolute;top:3px;left:3px;border-radius:50%}
+

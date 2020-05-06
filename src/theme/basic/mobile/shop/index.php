@@ -27,14 +27,15 @@ include_once(G5_THEME_MSHOP_PATH.'/shop.head.php');
         echo $list->run();
         ?>
     </div>
-
-    <button type="button" id="sch_submit2" onclick="location.href='https://gw2988.cafe24.com/g5/theme/basic/shop/JCai.php' " style="color: white;"><img src="<?php echo G5_DATA_URL; ?>/common/AICAM" style="background-repeat: no-repeat; width: 100px;height: 100px; background-color: black;color: white;">WebCams</button>
-    <div style="color: white; position: absolute; margin-top: 200px; margin-left: 175px; font-size: 20px;">Search with CAM</div>
 <?php } ?>
 
 <?php echo display_banner('왼쪽', 'boxbanner.skin.php'); ?>
-
+<div style="text-align: center">
+    <button type="button" id="sch_submit2" onclick="location.href='https://gw2988.cafe24.com/g5/theme/basic/shop/JCai.php' " style="color: white;"><img src="<?php echo G5_DATA_URL; ?>/common/AICAM" style="background-repeat: no-repeat; width: 100px;height: 100px; background-color: black;color: white;"></button>
+    <div style="color: black;font-size: 20px;">Search with CAM</div>
+</div>
 <?php if($default['de_mobile_type2_list_use']) { ?>
+    <br><br>
     <div class="sct_wrap">
         <h2><a href="<?php echo shop_type_url('2');; ?>">추천상품</a></h2>
         <?php

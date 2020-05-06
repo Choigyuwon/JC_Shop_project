@@ -15,36 +15,38 @@ if(G5_COMMUNITY_USE === false) {
 <?php echo visit('theme/basic'); // 방문자수 ?>
 
 
-    <div id="ft">
-        <div id="ft_copy">
-            <div id="ft_company">
-                <a href="<?php echo get_pretty_url('content', 'company'); ?>">회사소개</a>
-                <a href="<?php echo get_pretty_url('content', 'privacy'); ?>">개인정보처리방침</a>
-                <a href="<?php echo get_pretty_url('content', 'provision'); ?>">서비스이용약관</a>
-            </div>
+<div id="ft">
+    <div id="ft_copy">
+        <div id="ft_company">
+            <a href="<?php echo get_pretty_url('content', 'company'); ?>">회사소개</a>
+            <a href="<?php echo get_pretty_url('content', 'privacy'); ?>">개인정보처리방침</a>
+            <a href="<?php echo get_pretty_url('content', 'provision'); ?>">서비스이용약관</a>
         </div>
-        <div class="ft_cnt">
-            <h2>사이트 정보</h2>
-            <p class="ft_info">
-                팀명 : JustClap<br>
-                주소 : 강원도 원주시 흥업면 강릉원주대학교 컴퓨터 공학과<br>
-                대표 : 최규원 전화 010-4535-6076<br>
-                개인정보 보호책임자 : 최규원<br>
-            </p>
-            <div id="ft_corp"><br>Copyright &copy; <b>JustClap.</b> All rights reserved.<br></div>
-        </div>
-        <button type="button" id="top_btn"><i class="fa fa-arrow-up" aria-hidden="true"></i><span class="sound_only">상단으로</span></button>
-        <?php
-        if(G5_DEVICE_BUTTON_DISPLAY && G5_IS_MOBILE) { ?>
-            <a href="<?php echo get_device_change_url(); ?>" id="device_change">PC 버전으로 보기</a>
-            <?php
-        }
-
-        if ($config['cf_analytics']) {
-            echo $config['cf_analytics'];
-        }
-        ?>
+        Copyright &copy; <b>소유하신 도메인.</b> All rights reserved.<br>
     </div>
+    <div class="ft_cnt">
+    	<h2>사이트 정보</h2>
+        <p class="ft_info">
+        	회사명 : 회사명 / 대표 : 대표자명<br>
+			주소  : OO도 OO시 OO구 OO동 123-45<br>
+			사업자 등록번호  : 123-45-67890<br>
+			전화 :  02-123-4567  팩스  : 02-123-4568<br>
+			통신판매업신고번호 :  제 OO구 - 123호<br>
+			개인정보관리책임자 :  정보책임자명<br>
+		</p>
+    </div>
+    <button type="button" id="top_btn"><i class="fa fa-arrow-up" aria-hidden="true"></i><span class="sound_only">상단으로</span></button>
+    <?php
+    if(G5_DEVICE_BUTTON_DISPLAY && G5_IS_MOBILE) { ?>
+    <a href="<?php echo get_device_change_url(); ?>" id="device_change">PC 버전으로 보기</a>
+    <?php
+    }
+
+    if ($config['cf_analytics']) {
+        echo $config['cf_analytics'];
+    }
+    ?>
+</div>
 <script>
 jQuery(function($) {
 
