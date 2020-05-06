@@ -39,7 +39,7 @@ $mshop_categories = get_shop_category_array(true);
                     $j=0;
                     foreach($cate1 as $key=>$cate2){
                         if( empty($cate2) || $key === 'text' ) continue;
-                        
+
                         $mshop_ca_row2 = $cate2['text'];
                         if($j == 0)
                             echo '<ul class="sub_cate sub_cate1">'.PHP_EOL;
@@ -50,11 +50,11 @@ $mshop_categories = get_shop_category_array(true);
                             $mshop_ca_res3 = sql_query(get_mshop_category($mshop_ca_row2['ca_id'], 6));
                             if( count($cate2) > 1 )
                                 echo '<button type="button" class="sub_ct_toggle ct_op">'.get_text($mshop_ca_row2['ca_name']).' 하위분류 열기</button>'.PHP_EOL;
-                            
+
                             $k = 0;
                             foreach($cate2 as $cate3_key=>$cate3){
                                 if( empty($cate2) || $cate3_key === 'text' ) continue;
-                                
+
                                 $mshop_ca_row3 = $cate3['text'];
                                 if($k == 0)
                                     echo '<ul class="sub_cate sub_cate2">'.PHP_EOL;
@@ -124,7 +124,7 @@ $mshop_categories = get_shop_category_array(true);
                 echo '<p>등록된 분류가 없습니다.</p>'.PHP_EOL;
             ?>
         </div>
-       
+
         <?php include(G5_MSHOP_SKIN_PATH.'/boxtodayview.skin.php'); // 오늘 본 상품 ?>
 
         <ul id="cate_tnb">
@@ -134,7 +134,7 @@ $mshop_categories = get_shop_category_array(true);
             <li><a href="<?php echo G5_BBS_URL; ?>/qalist.php"><i class="fa fa-comments"></i>1:1문의</a></li>
             <li><a href="<?php echo G5_SHOP_URL; ?>/personalpay.php"><i class="fa fa-credit-card"></i>개인결제</a></li>
             <li><a href="<?php echo G5_URL; ?>"><i class="fa fa-home"></i>커뮤니티</a></li>
-        </ul> 
+        </ul>
     </div>
 </div>
 <script>

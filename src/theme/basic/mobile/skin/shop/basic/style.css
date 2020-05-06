@@ -57,7 +57,7 @@
 
 /* ##### maint.(nn).skin.php, list.(nn).skin.php 공통 적용 시작 ##### */
 /* 공통 */
-.sct_wrap {margin:10px 0 30px;zoom:1}
+.sct_wrap {margin:3px 0 30px;zoom:1}
 .sct_wrap:after {display:block;visibility:hidden;clear:both;content:""}
 .sct_wrap h2 {font-size:1.25em;margin:20px 10px 10px}
 
