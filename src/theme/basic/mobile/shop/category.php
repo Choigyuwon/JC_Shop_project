@@ -33,9 +33,10 @@ $mshop_categories = get_shop_category_array(true);
             ?>
                 <li>
                     <a href="<?php echo $mshop_ca_row1['url']; ?>"><?php echo get_text($mshop_ca_row1['ca_name']); ?></a>
+
                     <?php
                     if( count($cate1) > 1 )
-                        echo '<button class="sub_ct_toggle ct_op">'.get_text($mshop_ca_row1['ca_name']).' 하위분류 열기</button>'.PHP_EOL;
+                        echo '<button class="sub_ct_toggle ct_op">'.get_text($mshop_ca_row1['ca_name']);' 하위분류 열기.'?><img src="<?php echo G5_DATA_URL; ?>G5_DATA_URL/common/listbutton;"></button>'<?php ''.PHP_EOL;
 
                     $j=0;
                     foreach($cate1 as $key=>$cate2){
@@ -45,6 +46,7 @@ $mshop_categories = get_shop_category_array(true);
                         if($j == 0)
                             echo '<ul class="sub_cate sub_cate1">'.PHP_EOL;
                     ?>
+                        </li>
                         <li>
                             <a href="<?php echo $mshop_ca_row2['url']; ?>"><?php echo get_text($mshop_ca_row2['ca_name']); ?></a>
                             <?php
