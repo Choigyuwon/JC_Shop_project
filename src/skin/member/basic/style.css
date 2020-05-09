@@ -173,6 +173,7 @@
 #find_info #mb_hp_label {display:inline-block;margin-left:10px}
 #find_info p {line-height:1.5em}
 #find_info #mb_email {margin:10px 0}
+#find_info #mb_name {margin:10px 0}
 
 /* 로그인 */
 #mb_login {}
