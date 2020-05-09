@@ -67,7 +67,7 @@ border:1px solid #558ab7 !important;
 .hd_pops_footer .hd_pops_close {background:#393939;position:absolute;top:0;right:0}
 
 /* 상단 레이아웃 */
-#hd {background:#212020}
+#hd {background:#000000}
 #hd_h1 {position:absolute;font-size:0;line-height:0;overflow:hidden}
 
 #hd_wrapper {position:relative;margin:0 auto}
