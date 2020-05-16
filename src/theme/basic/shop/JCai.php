@@ -24,7 +24,25 @@ include_once(G5_THEME_SHOP_PATH.'/shop.head.php');
 <!-- AI 코드 시작 -->
 
 <?php
-	$lines = @file("test_var.txt");
+    $list_data = @file("./DATA_FOR_JCai/LIST.txt");
+    $num_data = count($list_data);
+    $num_data2 = 0;
+    $ar_data = array();
+    $k = 0;
+
+    for($i = 0; $i < $num_data; $i++) {
+        if($i != $num_data - 1) {
+            $list_data[$i] = substr($list_data[$i], 0, -2);
+        }
+        $path_data = "./DATA_FOR_JCai/".$list_data[$i].".txt";
+        $temp_data = @file($path_data);
+        $num_data2 += count($temp_data);
+
+        for ($j = 0; $j < count($temp_data); $j++) {
+            $ar_data[$k] = $temp_data[$j];
+            $k++;
+        }
+    }
 ?>
 
 <div>Teachable Machine Image Model</div>
@@ -78,25 +96,26 @@ include_once(G5_THEME_SHOP_PATH.'/shop.head.php');
     // run the webcam image through the image model
     async function predict() {
 
-	var js_ary, strar, strar_re;
-	js_ary = <?php echo json_encode($lines) ?>;
-	tes = String(js_ary);
-	strar = tes.split(",");
-	for(let i = 0; i < 2; i++) {
-		strar[i] = strar[i].slice(0, strar[i].length - 1);
-	}
+        var js_ary, strar, strar_re, count;
+        count = <?php echo json_encode($num_data2) ?>;
+        js_ary = <?php echo json_encode($ar_data) ?>;
+        tes = String(js_ary);
+        strar = tes.split(",");
+        for(let i = 0; i < count; i++) {
+            strar[i] = strar[i].slice(0, strar[i].length - 1);
+        }
         // predict can take in an image, video or canvas html element
         const prediction = await model.predict(webcam.canvas);
         for (let i = 0; i < maxPredictions; i++) {
             const classPrediction = prediction[i].className + ": " + prediction[i].probability.toFixed(2);
             labelContainer.childNodes[i].innerHTML = classPrediction;
-	for(let j = 0; j < 2; j++) {
-		strar_re = strar[j].split("|");
-		if(strar_re[1] == prediction[i].className && prediction[i].probability.toFixed(2) == 1.00) {
-		alert(strar_re[2]);
-		location.href = strar_re[3];
-	}
-	}
+            for(let j = 0; j < count; j++) {
+                strar_re = strar[j].split("|");
+                if(strar_re[1] == prediction[i].className && prediction[i].probability.toFixed(2) == 1.00) {
+                    alert(strar_re[2]);
+                    location.href = strar_re[3];
+                }
+            }
         }
     }
 </script>
