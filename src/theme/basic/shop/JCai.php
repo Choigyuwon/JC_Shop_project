@@ -32,7 +32,7 @@ include_once(G5_THEME_SHOP_PATH.'/shop.head.php');
 
     for($i = 0; $i < $num_data; $i++) {
         if($i != $num_data - 1) {
-            $list_data[$i] = substr($list_data[$i], 0, -2);
+            $list_data[$i] = substr($list_data[$i], 0, -1);
         }
         $path_data = "./DATA_FOR_JCai/".$list_data[$i].".txt";
         $temp_data = @file($path_data);
@@ -101,9 +101,7 @@ include_once(G5_THEME_SHOP_PATH.'/shop.head.php');
         js_ary = <?php echo json_encode($ar_data) ?>;
         tes = String(js_ary);
         strar = tes.split(",");
-        for(let i = 0; i < count; i++) {
-            strar[i] = strar[i].slice(0, strar[i].length - 1);
-        }
+
         // predict can take in an image, video or canvas html element
         const prediction = await model.predict(webcam.canvas);
         for (let i = 0; i < maxPredictions; i++) {
