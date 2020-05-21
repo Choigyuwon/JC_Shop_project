@@ -1,16 +1,10 @@
 <?php
 include_once('./_common.php');
-include_once(G5_CAPTCHA_PATH.'/captcha.lib.php');
 include_once(G5_LIB_PATH.'/mailer.lib.php');
 
 if ($is_member) {
     alert_close('이미 로그인중입니다.', G5_URL);
 }
-
-if (!chk_captcha()) {
-    alert('자동등록방지 숫자가 틀렸습니다.');
-}
-
 $email = get_email_address(trim($_POST['mb_email']));
 
 if (!$email)
@@ -42,10 +36,10 @@ sql_query($sql);
 // 인증 링크 생성
 $href = G5_BBS_URL.'/password_lost_certify.php?mb_no='.$mb['mb_no'].'&amp;mb_nonce='.$mb_nonce;
 
-$subject = "[".$config['cf_title']."] 요청하신 회원정보 찾기 안내 메일입니다.";
+$subject = "[".$config['cf_title']."] 안녕하세요! 요청하신 회원정보 찾기 안내 메일입니다.";
 
 $content = "";
-
+//회원들에게 보내는 메세지! 메일에 포함되어 전송된다!
 $content .= '<div style="margin:30px auto;width:600px;border:10px solid #f7f7f7">';
 $content .= '<div style="border:1px solid #dedede">';
 $content .= '<h1 style="padding:30px 30px 0;background:#f7f7f7;color:#555;font-size:1.4em">';
@@ -55,8 +49,9 @@ $content .= '<span style="display:block;padding:10px 30px 30px;background:#f7f7f
 $content .= '<a href="'.G5_URL.'" target="_blank">'.$config['cf_title'].'</a>';
 $content .= '</span>';
 $content .= '<p style="margin:20px 0 0;padding:30px 30px 30px;border-bottom:1px solid #eee;line-height:1.7em">';
-$content .= addslashes($mb['mb_name'])." (".addslashes($mb['mb_nick']).")"." 회원님은 ".G5_TIME_YMDHIS." 에 회원정보 찾기 요청을 하셨습니다.<br>";
-$content .= '저희 사이트는 관리자라도 회원님의 비밀번호를 알 수 없기 때문에, 비밀번호를 알려드리는 대신 새로운 비밀번호를 생성하여 안내 해드리고 있습니다.<br>';
+$content .= addslashes($mb['mb_name'])." (".addslashes($mb['mb_nick']).")"." 회원님 안녕하세요. JustClap 관리자 최규원 입니다. 
+비밀번호를 잊으셔서 많이 불편하셨죠? 다음과 같이 이메일로 안내해드리겠습니다.".G5_TIME_YMDHIS." 에 회원정보 찾기 요청을 하셨습니다.<br>";
+$content .= '보안으로 인해 관리자도 회원님의 비밀번호를 모릅니다. 그래서 회원님이 직접 비밀번호를 변경하셔야 합니다. 아래에 보이는 비밀번호로 로그인을 하셔서 비밀번호를 변경하세요!<br>';
 $content .= '아래에서 변경될 비밀번호를 확인하신 후, <span style="color:#ff3061"><strong>비밀번호 변경</strong> 링크를 클릭 하십시오.</span><br>';
 $content .= '비밀번호가 변경되었다는 인증 메세지가 출력되면, 홈페이지에서 회원아이디와 변경된 비밀번호를 입력하시고 로그인 하십시오.<br>';
 $content .= '로그인 후에는 정보수정 메뉴에서 새로운 비밀번호로 변경해 주십시오.';

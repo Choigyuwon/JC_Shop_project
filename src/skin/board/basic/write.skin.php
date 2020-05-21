@@ -154,11 +154,6 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
     <?php } ?>
 
 
-    <?php if ($is_use_captcha) { //자동등록방지  ?>
-    <div class="write_div">
-        <?php echo $captcha_html ?>
-    </div>
-    <?php } ?>
 
     <div class="btn_confirm write_div">
         <a href="<?php echo get_pretty_url($bo_table); ?>" class="btn_cancel btn">취소</a>
