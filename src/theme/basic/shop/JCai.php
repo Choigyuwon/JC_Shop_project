@@ -46,7 +46,7 @@ include_once(G5_THEME_SHOP_PATH.'/shop.head.php');
 ?>
 
 <div>Teachable Machine Image Model</div>
-<button type="button" onclick="init()">Start</button>
+<div><p style = "font-size:25px;color:#243071; font-weight: bold;">상품 찾기(찾으시려는 상품을 캠 화면에 비춰주세요)</p><button type="button" onclick="init()" style="font-size: 25px;background-color: black;color:white;width: 500px;height: 500px;">CamStart</button></div>
 <div id="webcam-container"></div>
 <div id="label-container"></div>
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>

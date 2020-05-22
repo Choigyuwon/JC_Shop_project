@@ -126,16 +126,16 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
 	            
 	        </li>
 	        <?php } ?>
-	
+
 	        <?php if ($config['cf_use_addr']) { ?>
 	        <li>
 	        	<div class="adress">
-	            	<span class="frm_label sound_only">주소<?php if ($config['cf_req_addr']) { ?>필수<?php } ?></span>
+	            	<span class="frm_label sound_only"><?php if ($config['cf_req_addr']) { ?>필수<?php } ?></span>
 	            	<label for="reg_mb_zip" class="sound_only">우편번호<?php echo $config['cf_req_addr']?'<strong class="sound_only"> 필수</strong>':''; ?></label>
 	            	<input type="text" name="mb_zip" value="<?php echo $member['mb_zip1'].$member['mb_zip2']; ?>" id="reg_mb_zip" <?php echo $config['cf_req_addr']?"required":""; ?> class="frm_input <?php echo $config['cf_req_addr']?"required":""; ?>" size="5" maxlength="6" placeholder="우편번호">
 	            	<button type="button" class="btn_frmline" onclick="win_zip('fregisterform', 'mb_zip', 'mb_addr1', 'mb_addr2', 'mb_addr3', 'mb_addr_jibeon');">주소검색</button><br>
 	            </div>
-	            <label for="reg_mb_addr1" class="sound_only">주소<?php echo $config['cf_req_addr']?'<strong class="sound_only"> 필수</strong>':''; ?></label>
+	            <label for="reg_mb_addr1" class="sound_only">기본주소<?php echo $config['cf_req_addr']?'<strong class="sound_only"> 필수</strong>':''; ?></label>
 	            <input type="text" name="mb_addr1" value="<?php echo get_text($member['mb_addr1']) ?>" id="reg_mb_addr1" <?php echo $config['cf_req_addr']?"required":""; ?> class="frm_input frm_address <?php echo $config['cf_req_addr']?"required":""; ?>" size="50" placeholder="주소"><br>
 	            <label for="reg_mb_addr2" class="sound_only">상세주소</label>
 	            <input type="text" name="mb_addr2" value="<?php echo get_text($member['mb_addr2']) ?>" id="reg_mb_addr2" class="frm_input frm_address" size="50" placeholder="상세주소">
@@ -143,7 +143,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
 	            <label for="reg_mb_addr3" class="sound_only">참고항목</label>
 	            <input type="text" name="mb_addr3" value="<?php echo get_text($member['mb_addr3']) ?>" id="reg_mb_addr3" class="frm_input frm_address" size="50" readonly="readonly" placeholder="참고항목">
 	            <input type="hidden" name="mb_addr_jibeon" value="<?php echo get_text($member['mb_addr_jibeon']); ?>">
-	            
+
 	        </li>
 	        <?php } ?>
         </ul>
@@ -258,11 +258,6 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
 	            <input type="text" name="mb_recommend" id="reg_mb_recommend" class="frm_input full_input" placeholder="추천인아이디">
 	        </li>
 	        <?php } ?>
-
-	        <li class="is_captcha_use">
-	            <span  class="frm_label">자동등록방지</span>
-	            <?php echo captcha_html(); ?>
-	        </li>
 	    </ul>
     </div>
 
