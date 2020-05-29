@@ -135,15 +135,21 @@ input, textarea {
 .ctt_img {text-align:center}
 
 /* 하단 레이아웃 */
-#ft {background:#212020;padding:20px;text-align:left}
-#ft h2 {position:absolute;font-size:0;text-indent:-9999em;line-height:0;overflow:hidden}
-#ft p {margin:0;padding:10px 0;line-height:1.8em;color:#e3e3e3;font-size:0.92em}
-#ft_logo {padding:20px 0 0}
-#ft_company {}
-#ft_company a {display:inline-block;padding-right:10px;line-height:1em;color:#fff}
-#ft_company a:first-child {border:0}
-#device_change {background:#302e2e;display:block;text-align:center;padding:10px;color:#afafaf;border-radius:5px}
 
+/* 하단 레이아웃 */
+#ft {background:#222;padding:0px 20px 20px}
+#ft h1 {width:0;height:0;font-size:0;line-height:0;overflow:hidden}
+#ft p {margin:0;padding:10px 0;line-height:1.8em}
+
+#ft_copy {padding:10px;line-height:2em;text-align:center;color:#777}
+#ft_copy #ft_company {text-align:center}
+#ft_copy #ft_company a {display:inline-block;padding:0 10px;line-height:1em;border-left:1px solid #333;color:#fff}
+#ft_copy #ft_company a:first-child {border:0}
+.ft_cnt {font-weight:normal;color:#e3e3e3;line-height:2em;text-align:center}
+.ft_cnt h2 {width:0;height:0;font-size:0;line-height:0;overflow:hidden}
+#ft_copy b {color:inherit}
+#ft_copy a {color:inherit;text-decoration:none}
+#device_change {background:#302e2e;display:block;text-align:center;padding:10px;color:#afafaf;border-radius:5px}
 /* 목록 바로가기 */
 .sanchor {margin:0 0 5px;padding:0}
 .sanchor:after {display:block;visibility:hidden;clear:both;content:""}

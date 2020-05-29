@@ -24,29 +24,27 @@ include_once(G5_THEME_SHOP_PATH.'/shop.head.php');
 <!-- AI 코드 시작 -->
 
 <?php
-    $list_data = @file("./DATA_FOR_JCai/LIST.txt");
-    $num_data = count($list_data);
-    $num_data2 = 0;
-    $ar_data = array();
-    $k = 0;
+$list_data = @file("./DATA_FOR_JCai/LIST.txt");
+$num_data = count($list_data);
+$num_data2 = 0;
+$ar_data = array();
+$k = 0;
 
-    for($i = 0; $i < $num_data; $i++) {
-        if($i != $num_data - 1) {
-            $list_data[$i] = substr($list_data[$i], 0, -1);
-        }
-        $path_data = "./DATA_FOR_JCai/".$list_data[$i].".txt";
-        $temp_data = @file($path_data);
-        $num_data2 += count($temp_data);
-
-        for ($j = 0; $j < count($temp_data); $j++) {
-            $ar_data[$k] = $temp_data[$j];
-            $k++;
-        }
+for($i = 0; $i < $num_data; $i++) {
+    if($i != $num_data - 1) {
+        $list_data[$i] = substr($list_data[$i], 0, -1);
     }
-?>
+    $path_data = "./DATA_FOR_JCai/".$list_data[$i].".txt";
+    $temp_data = @file($path_data);
+    $num_data2 += count($temp_data);
 
-<div>Teachable Machine Image Model</div>
-<div><p style = "font-size:25px;color:#243071; font-weight: bold;">상품 찾기(찾으시려는 상품을 캠 화면에 비춰주세요)</p><button type="button" onclick="init()" style="font-size: 25px;background-color: black;color:white;width: 500px;height: 500px;">CamStart</button></div>
+    for ($j = 0; $j < count($temp_data); $j++) {
+        $ar_data[$k] = $temp_data[$j];
+        $k++;
+    }
+}
+?>
+<div><p style = "font-size:25px;color:#243071; font-weight: bold; id="test_div">상품 찾기(찾으시려는 상품을 캠 화면에 비춰주세요)</p><button type="button" id="buttonclick" onclick="init()" style="font-size: 25px;background-color: black;color:white;width: 500px;height: 500px;">CamStart</button></div>
 <div id="webcam-container"></div>
 <div id="label-container"></div>
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
@@ -74,7 +72,7 @@ include_once(G5_THEME_SHOP_PATH.'/shop.head.php');
 
         // Convenience function to setup a webcam
         const flip = true; // whether to flip the webcam
-        webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
+        webcam = new tmImage.Webcam(500, 500, flip); // width, height, flip
         await webcam.setup(); // request access to the webcam
         await webcam.play();
         window.requestAnimationFrame(loop);
@@ -85,6 +83,7 @@ include_once(G5_THEME_SHOP_PATH.'/shop.head.php');
         for (let i = 0; i < maxPredictions; i++) { // and class labels
             labelContainer.appendChild(document.createElement("div"));
         }
+        document.getElementById("buttonclick").style.display = "none";
     }
 
     async function loop() {
@@ -109,7 +108,14 @@ include_once(G5_THEME_SHOP_PATH.'/shop.head.php');
             labelContainer.childNodes[i].innerHTML = classPrediction;
             for(let j = 0; j < count; j++) {
                 strar_re = strar[j].split("|");
-                if(strar_re[1] == prediction[i].className && prediction[i].probability.toFixed(2) == 1.00) {
+                if(strar_re[1] == prediction[i].className && prediction[i].probability.toFixed(2) >= 0.80 && prediction[i].probability.toFixed(2) <= 0.90 ) {
+                    var result = confirm("찾으시는 상품의 추천상품을 보시려면 확인을 눌러주세요. 정확하게 찾으시는 상품을 찾으시려면 취소를 눌러주세요.");
+                    if(result){
+                        alert("관련상품으로 이동합니다.");
+                        location.href=strar_re[3];
+                    }else{
+                        alert("다시 스캔해주세요!");
+                    }
                     alert(strar_re[2]);
                     location.href = strar_re[3];
                 }
