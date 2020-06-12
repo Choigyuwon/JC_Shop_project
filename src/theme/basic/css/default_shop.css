@@ -1410,3 +1410,25 @@ html.no-overflowscrolling #sc_coupon_frm, html.no-overflowscrolling #od_coupon_f
   filter: drop-shadow(0 0 0.015625em #fee) drop-shadow(0 0 0.03125em #fcc) drop-shadow(0 0 0.0625em #f99) drop-shadow(0 0 0.25em #f66) drop-shadow(0 0 0.5em #f33);
  }
 }
+
+.balloon_03 {
+ position:absolute;
+ width:400px;
+ height:200px;
+ background:#333333;
+ border-radius: 10px;
+ color :white;
+ margin-left: 430px;
+ margin-top:100px;
+ 
+}
+.balloon_03:after {
+ border-top:0px solid transparent;
+ border-left: 15px solid transparent;
+ border-right: 0px solid transparent;
+ border-bottom: 15px solid #333333;
+ content:"";
+ position:absolute;
+ top:10px;
+ left:-15px;
+}

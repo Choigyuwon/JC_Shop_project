@@ -12,7 +12,7 @@ include_once(G5_THEME_MSHOP_PATH.'/shop.head.php');
 
 <?php echo display_banner('왼쪽', 'boxbanner.skin.php'); ?>
     <div style="text-align: center">
-        <button type="button" id="sch_submit2" onclick="location.href='https://gw2988.cafe24.com/g5/theme/basic/shop/JCai.php' " style="color: white;"><img src="<?php echo G5_DATA_URL; ?>/common/AICAM" style="background-repeat: no-repeat; width: 100px;height: 100px; background-color: black;color: white;"></button>
+        <button type="button" id="sch_submit2" onclick="location.href='https://gw2988.cafe24.com/g5/theme/basic/shop/JCai_mobile.php' " style="color: white;"><img src="<?php echo G5_DATA_URL; ?>/common/AICAM" style="background-repeat: no-repeat; width: 100px;height: 100px; background-color: black;color: white;"></button>
         <div style="color: black;font-size: 20px;">Search with CAM</div>
     </div>
 
