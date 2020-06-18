@@ -45,7 +45,9 @@ for($i = 0; $i < $num_data; $i++) {
 }
 ?>
 
-<div><div class="balloon_03"> 캠 사용 방법<br><br><br>1. CamStart를 누른다.<br><br>2. 화면에 찾고싶은 상품을 보여준다.<br><br>3. 찾았다는 문구가 뜨면 확인을 누른다.<br><br>4. 상품을 잘못 보여주었다면 취소를 눌러 다시 보여준다.</div><button type="button" id="buttonclick" onclick="init()" style="font-size: 25px;background-color: black;color:white;width: 400px;height: 400px;">CamStart</button></div>
+<div><div class="balloon_03"> 캠 사용 방법<br><br><br>1. CamStart를 누른다.<br><br>2. 화면에 찾고싶은 상품을 보여준다.
+<br><br>3. 찾았다는 문구가 뜨면 확인을 누른다.<br><br>4. 상품을 잘못 보여주었다면 취소를 눌러 다시 보여준다.</div><button type="button" id="buttonclick"
+onclick="init()" style="font-size: 25px;background-color: black;color:white;width: 400px;height: 400px;">CamStart</button></div>
 <div id="webcam-container"></div>
 <div id="label-container"></div>
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
