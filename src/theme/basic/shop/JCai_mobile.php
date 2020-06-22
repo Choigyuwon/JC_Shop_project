@@ -107,7 +107,7 @@ for($i = 0; $i < $num_data; $i++) {
             labelContainer.childNodes[i].innerHTML = classPrediction;
             for(let j = 0; j < count; j++) {
                 strar_re = strar[j].split("|");
-                if(strar_re[1] == prediction[i].className && prediction[i].probability.toFixed(2) >= 0.80 && prediction[i].probability.toFixed(2) <= 0.90 ) {
+                if(strar_re[1] == prediction[i].className && prediction[i].probability.toFixed(2) >= 0.80 && prediction[i].probability.toFixed(2) <= 1.00 ) {
                     var result = confirm("찾으시는 상품의 추천상품을 보시려면 확인을 눌러주세요. 정확하게 찾으시는 상품을 찾으시려면 취소를 눌러주세요.");
                     if(result){
                         alert("관련상품으로 이동합니다.");
