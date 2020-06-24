@@ -108,19 +108,19 @@ onclick="init()" style="font-size: 25px;background-color: black;color:white;widt
         const prediction = await model.predict(webcam.canvas);
         for (let i = 0; i < maxPredictions; i++) {
             const classPrediction = prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-            labelContainer.childNodes[i].innerHTML = classPrediction;
+           // labelContainer.childNodes[i].innerHTML = classPrediction;
             for(let j = 0; j < count; j++) {
                 strar_re = strar[j].split("|");
-                if(strar_re[1] == prediction[i].className && prediction[i].probability.toFixed(2) == 1.00) {
+                if(strar_re[1] == prediction[i].className && prediction[i].probability.toFixed(2) >= 0.95) {
                     var result = confirm("찾으시는 상품의 추천상품을 보시려면 확인을 눌러주세요. 정확하게 찾으시는 상품을 찾으시려면 취소를 눌러주세요.");
                     if(result){
                         alert("관련상품으로 이동합니다.");
                         location.href=strar_re[3];
+                        alert(strar_re[2]);
+                        location.href = strar_re[3];
                     }else{
                         alert("다시 스캔해주세요!");
                     }
-                    alert(strar_re[2]);
-                    location.href = strar_re[3];
                 }
             }
         }

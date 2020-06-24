@@ -43,7 +43,7 @@ for($i = 0; $i < $num_data; $i++) {
 ?>
 
 <div><button type="button" id="buttonclick" onclick="init()" style="font-size: 25px;background-color: black;color:white;width: 400px;height: 400px;">CamStart</button></div><br>
-<div><div class="balloon_03"> 캠 사용 방법<br><br><br>1. CamStart를 누른다.<br><br>2. 화면에 찾고싶은 상품을 보여준다.<br><br>3. 찾았다는 문구가 뜨면 확인을 누른다.<br><br>4. 상품을 잘못 보여주었다면 취소를 눌러 다시 보여준다.</div></div>
+캠 사용 방법<br><br><br>1. CamStart를 누른다.<br><br>2. 화면에 찾고싶은 상품을 보여준다.<br><br>3. 찾았다는 문구가 뜨면 확인을 누른다.<br><br>4. 상품을 잘못 보여주었다면 취소를 눌러 다시 보여준다.
 <div id="webcam-container"></div>
 <div id="label-container"></div>
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
@@ -104,19 +104,20 @@ for($i = 0; $i < $num_data; $i++) {
         const prediction = await model.predict(webcam.canvas);
         for (let i = 0; i < maxPredictions; i++) {
             const classPrediction = prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-            labelContainer.childNodes[i].innerHTML = classPrediction;
+            //labelContainer.childNodes[i].innerHTML = classPrediction;
             for(let j = 0; j < count; j++) {
                 strar_re = strar[j].split("|");
-                if(strar_re[1] == prediction[i].className && prediction[i].probability.toFixed(2) >= 0.80 && prediction[i].probability.toFixed(2) <= 1.00 ) {
+                if(strar_re[1] == prediction[i].className && prediction[i].probability.toFixed(2) >= 0.90 && prediction[i].probability.toFixed(2) <= 1.00 ) {
                     var result = confirm("찾으시는 상품의 추천상품을 보시려면 확인을 눌러주세요. 정확하게 찾으시는 상품을 찾으시려면 취소를 눌러주세요.");
                     if(result){
                         alert("관련상품으로 이동합니다.");
                         location.href=strar_re[3];
+                        alert(strar_re[2]);
+                        location.href = strar_re[3];
                     }else{
                         alert("다시 스캔해주세요!");
                     }
-                    alert(strar_re[2]);
-                    location.href = strar_re[3];
+
                 }
             }
         }
