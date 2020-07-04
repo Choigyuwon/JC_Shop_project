@@ -104,7 +104,6 @@ onclick="init()" style="font-size: 25px;background-color: black;color:white;widt
         tes = String(js_ary);
         strar = tes.split(",");
 
-        // predict can take in an image, video or canvas html element
         const prediction = await model.predict(webcam.canvas);
         for (let i = 0; i < maxPredictions; i++) {
             const classPrediction = prediction[i].className + ": " + prediction[i].probability.toFixed(2);
